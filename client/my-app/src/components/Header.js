@@ -29,12 +29,12 @@ function Header(){
         
     </div>
     <Switch>
-        <Route path='/'><Home /></Route>
-        <Route path='/aboutus'><AboutUs /></Route>
-        <Route path='/services-information'><ServicesInformation /></Route>
-        <Route path='/contactus'><ContactUs /></Route>
-        <Route path='/login'><Login /></Route>
-        <Route path='/employee'><Employee /></Route>
+        <Route exact path='/'><Home /></Route>
+        <Route exact path='/aboutus'><AboutUs /></Route>
+        <Route exact path='/services-information'><ServicesInformation /></Route>
+        <Route exact path='/contactus'><ContactUs /></Route>
+        <Route exact path='/login'><Login /></Route>
+        <Route exact path='/employee'><Employee /></Route>
     </Switch>
     </Router>
     );
