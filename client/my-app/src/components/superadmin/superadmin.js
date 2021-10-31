@@ -19,8 +19,8 @@ function SuperAdmin(){
     </div>
 
     <div>
-        <h1 style="text-align:center;">
-            Welcome, {{Manager }}
+        <h1 style={{'text-align':'center'}}>
+            Welcome, Manager
         </h1>
     </div>
 

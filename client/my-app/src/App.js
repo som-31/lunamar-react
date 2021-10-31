@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Register from './components/Register';
+import Manager from './components/manager/Manager';
+import SuperAdmin from './components/superadmin/SuperAdmin';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
       {/* <AboutUs /> */}
     </div>
     <Switch>
-      <Route path="/register" exact component={Register}></Route>
+      <Route path="/register" exact><Register /></Route>
+      <Route path="/manager" exact><Manager /></Route> 
+      <Route path="/superadmin" exact><SuperAdmin /></Route>
     </Switch>
     </Router>
   );

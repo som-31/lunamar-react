@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidenavmanager from './Sidenavmanager';
 
 <script src=
 "https://smtpjs.com/v3/smtp.js">
@@ -61,8 +60,6 @@ function Register(){
             </div>
         </div>
     </div>
-
-        
 
       </>
     );
