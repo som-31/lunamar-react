@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Manager(){
-
     return(
         <>
           
@@ -19,7 +18,7 @@ function Manager(){
     </div>
 
     <div>
-        <h1 style="text-align:center;">
+        <h1 style={{"textAlign":"center"}}>
             Welcome
         </h1>
     </div>

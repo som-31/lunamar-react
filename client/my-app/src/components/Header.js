@@ -5,6 +5,7 @@ import ContactUs from './ContactUs';
 import Employee from './Employee';
 import Home from './Home';
 import Login from './Login';
+import Manager from './manager/Manager';
 import ServicesInformation from './ServicesInformation';
 
 function Header(){
@@ -35,6 +36,8 @@ function Header(){
         <Route exact path='/contactus'><ContactUs /></Route>
         <Route exact path='/login'><Login /></Route>
         <Route exact path='/employee'><Employee /></Route>
+        <Route exact path='/manager'> <Manager/> </Route>
+
     </Switch>
     </Router>
     );
