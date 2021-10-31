@@ -1,8 +1,7 @@
 import React from 'react';
-import manager from './manager';
+import Manager from './manager/Manager';
 function Employee(){
-    const managerRoute = manager();
-    const handleOnClick = useCallback(() => history.push('/sample'), [managerRoute]);
+   
   
     return(
         <>

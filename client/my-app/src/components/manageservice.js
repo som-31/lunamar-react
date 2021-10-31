@@ -1,29 +1,12 @@
 import React from 'react';
-import sidenavmanager from './sidenavmanager';
+import sidenavmanager from './Sidenavmanager';
 
-function manageresident(){
+function ManageService(){
 
     return(
         <>
-        <div class="navbar">
-            <div>
-                      <img src="assets/images/Lunamar-logos.jpeg" alt="subdivision image" height="20%" width="30%"> </img>
-
-            </div>
-            <nav>
-              <ul id='MenuItems'>
-                  <li><a href='home.html'>Home</a></li>
-                  <li><a href='aboutus.html'>About Us</a></li>
-                  <li><a href='services-information.html'>Services</a></li>
-                  <li><a href='contact.html'>Contact</a></li>
-                  <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
-                  <li><a href='employee.html'>Employee</a></li>
-              </ul>
-          </nav>
-      </div>
-        <div>
-            
-        </div>
+       
+     
         <div class="sidebar">
           <a href="manage-reports.html">Reports</a>
           <a href="manage-manager.html">Manage Manager</a>
@@ -98,4 +81,4 @@ function manageresident(){
     );
 }
 
-export default manageresident;
+export default ManageService;

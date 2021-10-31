@@ -1,7 +1,7 @@
 import React from 'react';
-import sidenavmanager from './sidenavmanager';
+import sidenavmanager from './Sidenavmanager';
 
-function resident(){
+function Register(){
     function sendEmail() {
         var toEmail = document.getElementById('email');
         var password = document.getElementById('password');
@@ -25,22 +25,7 @@ function resident(){
     return(
         <>
      <div class="full-page">
-        <div class="navbar">
-            <div>
-                        <img src="assets/images/Lunamar-logos.jpeg" alt="subdivision image" height="20%" width="30%"></img>
-
-            </div>
-            <nav>
-                <ul id='MenuItems'>
-                    <li><a href='home.html'>Home</a></li>
-                    <li><a href='aboutus.html'>About Us</a></li>
-                    <li><a href='services-information.html'>Services</a></li>
-                    <li><a href='contact.html'>Contact</a></li>
-                    <li><a href='login.html'>Login</a></li>
-                    <li><a href='employee.html'>Employee</a></li>
-                </ul>
-            </nav>
-        </div>
+        
         <div id='login-form'class='login-page'>
             <div class="form-box" style="height: 680px;">
                 <div class='button-box'>
@@ -81,4 +66,4 @@ function resident(){
     );
 }
 
-export default resident;
+export default Register;
