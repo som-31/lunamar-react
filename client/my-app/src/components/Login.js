@@ -1,9 +1,11 @@
 import React from 'react';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 function Login(){
 
     return (
         <>
+        <BrowserRouter>
         <div id='login-form' class='login-page'>
             <div class="form-box" style={{height: "470px"}}>
                 <div class='button-box'>
@@ -20,9 +22,10 @@ function Login(){
 		    <input type='checkbox'class='check-box' /><span>Remember Password</span>
 		    <button type='submit'class='submit-btn'>Log in</button>
 		 </form>
-         <span>Want to be part of us. Then <a href="register.html">Register</a> here.</span>
+         <span>Want to be part of us. Then <Link to='/register' >Register</Link> here.</span>
             </div>
         </div>
+        </BrowserRouter>
         </>
     );
 }

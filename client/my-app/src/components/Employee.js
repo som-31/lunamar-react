@@ -1,5 +1,6 @@
 import React from 'react';
 import Something from './manager/Something';
+import { Redirect } from 'react-router-dom'
 
 
 function something(){
