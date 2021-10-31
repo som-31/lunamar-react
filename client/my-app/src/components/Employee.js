@@ -1,12 +1,6 @@
 import React from 'react';
-import Something from './manager/Something';
-import { Link, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
-
-function something(){
-    alert('in here');
-    return (<Something />);
-}
 
 function Employee(){
    
@@ -29,7 +23,6 @@ function Employee(){
             </div>
             <div>
             </div>
-          
         </>
     );
 }
