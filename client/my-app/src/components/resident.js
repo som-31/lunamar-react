@@ -1,4 +1,5 @@
 import React from 'react';
+import sidenavmanager from './Sidenavmanager';
 
 function Resident(){
 

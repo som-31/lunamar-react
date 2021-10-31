@@ -1,7 +1,8 @@
 import React from 'react';
-
+import Manager from './manager/Manager';
 function Employee(){
-
+   
+  
     return(
         <>
         <div style={{"text-align":"center", color: "brown"}}>
@@ -17,6 +18,10 @@ function Employee(){
                     <div class="service-sub-block-header"><a href='admin.html'>Super Admin</a></div>
                 </div>
             </div>
+            <div>
+            <sidenavmanager/>
+            </div>
+          
         </>
     );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
+import sidenavmanager from './sidenavmanager';
 
-function SuperAdmin(){
+function Admin(){
 
     return(
         <>
@@ -30,4 +31,4 @@ function SuperAdmin(){
     );
 }
 
-export default SuperAdmin;
+export default Admin;
