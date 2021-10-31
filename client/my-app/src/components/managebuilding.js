@@ -1,12 +1,11 @@
 import React from 'react';
-import sidenavmanager from './Sidenavmanager';
 
 function ManageBuilding(){
 
     return(
         <>
  
-<div class="sidebar">
+{/* <div class="sidebar">
   <a href="manage-reports.html">Reports</a>
   <a href="manage-manager.html">Manage Manager</a>
   <a href="manage-building-adminview.html">Manage Building</a>
@@ -17,7 +16,7 @@ function ManageBuilding(){
   <a href='manage-amenities-adminview.html'>Manage Amenities</a>
   <a href='chat-admin.html'>Chat</a>
 
-</div>
+</div> */}
     <div id='login-form'class='login-page'>
       <div class="form-box">
           <div class='button-box'>

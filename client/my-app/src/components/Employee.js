@@ -1,6 +1,6 @@
 import React from 'react';
 import Something from './manager/Something';
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 
 function something(){
@@ -19,16 +19,15 @@ function Employee(){
             <div id='service-form' class='service-page'>
                 <div class="service-sub-block">
                     {/* <div class="service-sub-block-header"><a href='manager.html' onClick="something()">Manager</a></div> */}
-                    <div class="service-sub-block-header"><button onClick={something}>Manager</button></div>
+                    <div class="service-sub-block-header"><Link to='/manager'>Manager</Link></div>
                 </div>
             </div>
             <div id='service-form' class='service-page'>
                 <div class="service-sub-block">
-                    <div class="service-sub-block-header"><a href='admin.html'>Super Admin</a></div>
+                    <div class="service-sub-block-header"><Link to='/superadmin'>Super Admin</Link></div>
                 </div>
             </div>
             <div>
-            <sidenavmanager/>
             </div>
           
         </>
