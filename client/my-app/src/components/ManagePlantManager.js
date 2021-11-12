@@ -1,57 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ManageIncident(){
+function ManagePlantManager(){
 
     return(
         <>
-<div class="sidebar">
-
-<Link to='/visit-apartment'>Visit Apartment</Link>
-<Link to='/visit-garden'>Visit Garden</Link>
-<Link to='/manage-incident'>Manage Incident</Link>
-
-<Link to='/chat-visitor'>Chat</Link>
-</div>    <div id='login-form'class='login-page'>
-      <div class="form-box">
+  
+  <div class="sidebar">
+            <Link to="/manage-building-manager">Manage Building</Link>
+            <Link to='/manage-resident-manager'>Manage Resident</Link>
+            <Link to='/manage-apartment-manager'>Manage Apartment</Link>
+            <Link to='/manage-service-manager'>Manage Service</Link>
+            <Link to='/manage-visitor-manager'>Manage Visitor</Link>
+            <Link to='/manage-amenities-manager'>Manage Amenities</Link>
+            <Link to='/chat-manager'>Chat</Link>
+        </div>
+    <div id='login-form'class='login-page'>
+      <div class="form-box" style="height: 560px;">
           <div class='button-box'>
                <div id='btn'></div>
-            
+              
           </div>
-        
+          
    <div class="login-registering">
       <center>
-          <h1>Manage Incidentss</h1>
+          <h1>Manage Plants</h1>
       </center>
    </div>
 <form id='register' class='input-group-register'>
-   
-    <input type='text'class='input-field'placeholder='Incident Name' required/>
-    <input type='text'class='input-field'placeholder='Visitor Name' required/>
+    <input type='text'class='input-field'placeholder='Plant Type' required/>
+    <br/>
+    
+   <input type='text'class='input-field'placeholder='Plant Name' required/>
     <br/>
     <br/>
-    <textarea placeholder="Description" class="field" style="border: 1px solid black;"></textarea>
-    <input type='text'class='input-field'placeholder='Visiting Apartment Id' required/>
+    <textarea placeholder="Plant Description" class="field" style="border: 1px solid black;"></textarea>
     <br/>
     <br/>
-    <label for="">Select Visitor</label>
+    <label for="">Select Garden</label>
     <select name="" id="">
-        <option value="">Sayali Deshmukh</option>
-        <option value="">Somnath Jadhav</option>
-        <option value="">Rohit Padwal</option>
-        <option value="">Michael Kors</option>
-        <option value="">Ernst Handel</option>
-        <option value="">Island Trading</option>
+        <option value="">Earth Angels</option>
+        <option value="">Flower Dome</option>
+        <option value="">Green Solutions</option>
+        <option value="">Arbor Gardening</option>
+        <option value="">Nature Sharp</option>
+        <option value="">Nature Captured</option>
     </select>
     <br/>
     <br/>
- 
- 
 
-<div>
-    <label for="">Incident At:</label>
-    <input type="time" name="" id="" placeholder="incident_at" class="input-field">    </input>
-</div>
+ 
     <button type='submit'class='submit-btn'>Submit</button>
      </form>
       </div>
@@ -60,32 +58,24 @@ function ManageIncident(){
   <center>
     <table>
         <tr>
-          <th>Incident Name</th>
-          <th>Visitor Name</th>
-          <th>Visiting Apartment Id</th>
-          <th>Incident At</th>
+          <th>Plant Type</th>
+          <th>Plant Name</th>
           <th>Description</th>
             <th>Actions</th>
          </tr>
     <tr>
-      <td>Verbal Abuse</td>
-      <td>Sayali Deshmukh</td>
-      
-      <td>12</td>
-      <td>11:20 PM</td>
+      <td>Flowering</td>
+      <td>Agapanthus</td>
       <td>fsdfsdfdsfffcfsfff</td>
-      <td>
+    <td>
         <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
       <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
-        <td>Harrassment</td>
-        <td>Somnath Jadhav</td>
-        
-        <td>13</td>
-        <td>1:20 PM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
+        <td>Non Flowering</td>
+      <td>club mosses</td>
+      <td>fsdfsdfdsfffcfsfff</td>
       
     
       <td>
@@ -94,35 +84,8 @@ function ManageIncident(){
     </td>
     </tr>
     <tr>
-        <td>murder</td>
-        <td>Rohit Padwal</td>
-      
-        <td>13</td>
-        <td>5:20 PM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td>Roberry</td>
-        <td>Michael Kors</td>
-        
-        <td>20</td>
-        <td>6:00 AM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-      <td>Roberry</td>
-      <td>Ernst Handel</td>
-      
-      <td>34</td>
-      <td>6:30 PM</td>
+        <td>Non Flowering</td>
+      <td>hornworts</td>
       <td>fsdfsdfdsfffcfsfff</td>
       <td>
         <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
@@ -130,12 +93,27 @@ function ManageIncident(){
     </td>
     </tr>
     <tr>
-        <td>Roberry</td>
-        <td>Island Trading</td>
-      
-        <td>3</td>
-        <td>10:00 PM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
+        <td>Non Flowering</td>
+      <td>Aliverworts</td>
+      <td>fsdfsdfdsfffcfsfff</td>
+      <td>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
+    </td>
+    </tr>
+    <tr>
+      <td>Flowering</td>
+      <td>Tulip</td>
+      <td>fsdfsdfdsfffcfsfff</td>
+      <td>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
+    </td>
+    </tr>
+    <tr>
+        <td>Flowering</td>
+      <td>Lily</td>
+      <td>fsdfsdfdsfffcfsfff</td>
     <td>
         <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
       <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
@@ -149,4 +127,4 @@ function ManageIncident(){
     );
 }
 
-export default ManageIncident;
+export default ManagePlantManager;

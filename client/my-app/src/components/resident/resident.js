@@ -6,17 +6,17 @@ function Resident(){
         <>
     
         
+    <Link to='/manage-service-resident'>Manage Service</Link>
+                    <Link to='/manage-visitor-resident'>Manage Visitor</Link>
+                    <Link to='/photo-video'>Upload Photo/video</Link>
 
-        <div class="sidebar">
-    
-            <a href='enabled-services-resident.html'>Manage Service</a>
-            <a href='manage-visitor-residentview.html'>Manage Visitor</a>
-            <a href='upload-pic-video-resident.html'>Upload picture and Video </a>
-
-            <a href='chat-resident.html'>Chat</a>
-    
-        </div>
-
+                    <Link to='/chat-resident'>Chat</Link>
+    <div>
+        <h1 style={{"text-align":"center"}}>
+            Welcome
+        </h1>
+    </div>
+        
         
 
       </>

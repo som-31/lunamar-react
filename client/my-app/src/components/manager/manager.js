@@ -1,22 +1,20 @@
 import React from 'react';
-import ManagerSideNav from './ManagerSideNav';
+import { Link } from 'react-router-dom';
 
 function Manager(){
 
     return(
         <>
 
-    {/* <div class="sidebar">
-        <a href="manage-building-managerview.html">Manage Building</a>
-        <a href='manage-resident-managerview.html'>Manage Resident</a>
-        <a href='manage-apartment-manager.html'>Manage Apartment</a>
-        <a href='manage-service-managerview.html'>Manage Service</a>
-        <a href='manage-visitor-managerview.html'>Manage Visitor</a>
-        <a href='manage-amenities-managerview.html'>Manage Amenities</a>
-        <a href='chat-manager.html'>Chat</a>
-
-    </div> */}
-    <ManagerSideNav />
+<div class="sidebar">
+            <Link to="/manage-building-manager">Manage Building</Link>
+            <Link to='/manage-resident-manager'>Manage Resident</Link>
+            <Link to='/manage-apartment-manager'>Manage Apartment</Link>
+            <Link to='/manage-service-manager'>Manage Service</Link>
+            <Link to='/manage-visitor-manager'>Manage Visitor</Link>
+            <Link to='/manage-amenities-manager'>Manage Amenities</Link>
+            <Link to='/chat-manager'>Chat</Link>
+        </div>
     <div>
         <h1 style={{"text-align":"center"}}>
             Welcome

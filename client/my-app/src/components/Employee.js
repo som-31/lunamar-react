@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 function Employee(){
@@ -12,7 +12,6 @@ function Employee(){
             </div>
             <div id='service-form' class='service-page'>
                 <div class="service-sub-block">
-                    {/* <div class="service-sub-block-header"><a href='manager.html' onClick="something()">Manager</a></div> */}
                     <div class="service-sub-block-header"><Link to='/manager'>Manager</Link></div>
                 </div>
             </div>

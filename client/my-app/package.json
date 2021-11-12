@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "http://rxp3828.uta.cloud",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

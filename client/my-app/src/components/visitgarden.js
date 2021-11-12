@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function VisitGarden(){
 
     return (
         <>
 <div class="sidebar">
-  <a href="visit-apartment-visitor.html">Visit Apartment</a>
-  <a href='visit-garden-visitor.html'>Visit Garden</a>
-  <a href='chat-visitor.html'>Chat</a>
 
+<Link to='/visit-apartment'>Visit Apartment</Link>
+<Link to='/visit-garden'>Visit Garden</Link>
+<Link to='/manage-incident'>Manage Incident</Link>
+
+<Link to='/chat-visitor'>Chat</Link>
 </div>
     <div id='login-form'class='login-page'>
       <div class="form-box" style="height: 700px;">

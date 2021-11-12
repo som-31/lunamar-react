@@ -1,22 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function ManageBuilding(){
+function ManageBuildingAdmin(){
 
     return(
         <>
  
-{/* <div class="sidebar">
-  <a href="manage-reports.html">Reports</a>
-  <a href="manage-manager.html">Manage Manager</a>
-  <a href="manage-building-adminview.html">Manage Building</a>
-  <a href="manage-apartment-adminview.html">Manage Apartment</a>
-  <a href='manage-resident-adminview.html'>Manage Resident</a>
-  <a href='manage-service-adminview.html'>Manage Service</a>
-  <a href='manage-visitor-admintview.html'>Manage Visitor</a>
-  <a href='manage-amenities-adminview.html'>Manage Amenities</a>
-  <a href='chat-admin.html'>Chat</a>
+ <div class="sidebar">
+   <Link to="/manage-reports-admin">Manage Reports</Link>
+        <Link to="/manage-manager">Manage Manager</Link>
 
-</div> */}
+            <Link to="/manage-building-admin">Manage Building</Link>
+            <Link to='/manage-resident-admin'>Manage Resident</Link>
+            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+            <Link to='/manage-service-admin'>Manage Service</Link>
+            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+            <Link to='/chat-admin'>Chat</Link>
+    </div>
     <div id='login-form'class='login-page'>
       <div class="form-box">
           <div class='button-box'>
@@ -109,4 +110,4 @@ function ManageBuilding(){
     );
 }
 
-export default ManageBuilding;
+export default ManageBuildingAdmin;

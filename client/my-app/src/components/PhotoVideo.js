@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function PhotoVideo(){
 
@@ -7,15 +8,11 @@ function PhotoVideo(){
 
 
 
-    <div class="sidebar">
-    
-        <a href='enabled-services-resident.html'>Manage Service</a>
-        <a href='manage-visitor-residentview.html'>Manage Visitor</a>
-        <a href='upload-pic-video-resident.html'>Upload picture and Video </a>
+<Link to='/manage-service-resident'>Manage Service</Link>
+                    <Link to='/manage-visitor-resident'>Manage Visitor</Link>
+                    <Link to='/photo-video'>Upload Photo/video</Link>
 
-        <a href='chat-resident.html'>Chat</a>
-
-    </div>
+                    <Link to='/chat-resident'>Chat</Link>
 
     <div>
         <form >

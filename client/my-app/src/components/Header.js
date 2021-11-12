@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import Employee from './Employee';
@@ -24,6 +24,9 @@ function Header(){
                 <li><Link to='contactus'>Contact Us</Link></li>
                 <li><Link to='/login'>Login</Link></li>
                 <li><Link to='/employee'>Employee</Link></li>
+                <li><Link to={{ pathname: "http://sxd6629.uta.cloud/" }} target="_blank">Blog</Link></li>
+
+
             </ul>
         </nav>
         

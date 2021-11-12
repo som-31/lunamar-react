@@ -1,45 +1,43 @@
 import React from 'react';
-import sidenavmanager from './Sidenavmanager';
+import { Link } from 'react-router-dom';
 
-function ManageGarden(){
+function ManageGardenManager(){
 
     return(
         <>
   
-<div class="sidebar">
-  <a href="manage-manager.html">Manage Manager</a>
-  <a href="manage-building-adminview.html">Manage Building</a>
-  <a href="manage-apartment-adminview.html">Manage Apartment</a>
+  <div class="sidebar">
+            <Link to="/manage-building-manager">Manage Building</Link>
+            <Link to='/manage-resident-manager'>Manage Resident</Link>
+            <Link to='/manage-apartment-manager'>Manage Apartment</Link>
+            <Link to='/manage-service-manager'>Manage Service</Link>
+            <Link to='/manage-visitor-manager'>Manage Visitor</Link>
+            <Link to='/manage-amenities-manager'>Manage Amenities</Link>
+            <Link to='/chat-manager'>Chat</Link>
+        </div>
 
-  <a href='manage-resident-adminview.html'>Manage Resident</a>
-  <a href='manage-service-adminview.html'>Manage Service</a>
-  <a href='manage-visitor-admintview.html'>Manage Visitor</a>
-  <a href='manage-amenities-adminview.html'>Manage Amenities</a>
-  <a href='chat-admin.html'>Chat</a>
-
-</div>
     <div id='login-form'class='login-page'>
       <div class="form-box">
           <div class='button-box'>
                <div id='btn'></div>
-             
+              
           </div>
-          
+         
    <div class="login-registering">
       <center>
           <h1>Manage Gardens</h1>
       </center>
    </div>
 <form id='register' class='input-group-register'>
-   <input type='text'class='input-field'placeholder='Garden Name' required></input>
+   <input type='text'class='input-field'placeholder='Garden Name' required/>
     <br/>
     <br/>
     <p>Opening Hours</p>
-    <input type="time" class='input-field' required name="" id="opening_hours"></input>
+    <input type="time" class='input-field' required name="" id="opening_hours"/>
     <br/>
     <br/>
     <label for="closing_hours">Closing Hours</label>
-    <input type="time" class='input-field' required name="" id="closing_hours"> </input>
+    <input type="time" class='input-field' required name="" id="closing_hours"/>
     <br/>
     <br/>
     <label for="gardener">Select Gardener</label>
@@ -82,8 +80,8 @@ function ManageGarden(){
       <td>Sayali Deshmukh</td>
       <td>Lunamar</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -93,8 +91,8 @@ function ManageGarden(){
       <td>Rohit Padwal</td>
       <td>Lunamar</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -104,8 +102,8 @@ function ManageGarden(){
       <td>Somnath Jadhav</td>
       <td>Lunamar</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -115,8 +113,8 @@ function ManageGarden(){
       <td>Rohit Padwal</td>
       <td>Lunamar</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -126,8 +124,8 @@ function ManageGarden(){
       <td>Sayali Deshmukh</td>
       <td>Lunamar</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -137,8 +135,8 @@ function ManageGarden(){
       <td>Somnath Jadhav</td>
       <td>Lunamar</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
   </table>
@@ -149,4 +147,4 @@ function ManageGarden(){
     );
 }
 
-export default ManageGarden;
+export default ManageGardenManager;

@@ -1,23 +1,23 @@
 import React from 'react';
-import sidenavmanager from './Sidenavmanager';
+import { Link } from 'react-router-dom';
 
-function ManagePool(){
+function ManagePoolAdmin(){
 
     return(
         <>
   
-<div class="sidebar">
-  <a href="manage-manager.html">Manage Manager</a>
-  <a href="manage-building-adminview.html">Manage Building</a>
-  <a href="manage-apartment-adminview.html">Manage Apartment</a>
+  <div class="sidebar">
+   <Link to="/manage-reports-admin">Manage Reports</Link>
+        <Link to="/manage-manager">Manage Manager</Link>
 
-  <a href='manage-resident-adminview.html'>Manage Resident</a>
-  <a href='manage-service-adminview.html'>Manage Service</a>
-  <a href='manage-visitor-admintview.html'>Manage Visitor</a>
-  <a href='manage-amenities-adminview.html'>Manage Amenities</a>
-  <a href='chat-admin.html'>Chat</a>
-
-</div>
+            <Link to="/manage-building-admin">Manage Building</Link>
+            <Link to='/manage-resident-admin'>Manage Resident</Link>
+            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+            <Link to='/manage-service-admin'>Manage Service</Link>
+            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+            <Link to='/chat-admin'>Chat</Link>
+    </div>
     <div id='login-form'class='login-page'>
       <div class="form-box">
           <div class='button-box'>
@@ -32,7 +32,7 @@ function ManagePool(){
    </div>
 <form id='register' class='input-group-register'>
     <br/>
-    <input type="number" class='input-field' placeholder='Pool Id' required> </input>
+    <input type="number" class='input-field' placeholder='Pool Id' required/> 
 <br/>
 <br/>
 <label for="subdivision">Select Subdivision</label>
@@ -45,16 +45,16 @@ function ManagePool(){
     <br/>
     <br/>
     <p>Opening Hours</p>
-    <input type="time" class='input-field' required name="" id="opening_hours"></input>
+    <input type="time" class='input-field' required name="" id="opening_hours"/>
     <br/>
     <label for="closing_hours">Closing Hours</label>
-    <input type="time" class='input-field' required name="" id="closing_hours"></input>
+    <input type="time" class='input-field' required name="" id="closing_hours"/>
     <br/>
     <p>Last Inspection At</p>
-    <input type="date" class='input-field' required name="" id="Last Inspection At"></input>
+    <input type="date" class='input-field' required name="" id="Last Inspection At"/>
     <br/>
     <label for="Next_Ispection">Next Inspection At</label>
-    <input type="date" class='input-field' required name="" id="Next Inspection At"></input>
+    <input type="date" class='input-field' required name="" id="Next Inspection At"/>
     <br/>
      <button type='submit'class='submit-btn'>Submit</button>
      </form>
@@ -79,8 +79,8 @@ function ManagePool(){
      <td>01/10/2021</td>
      <td>10/10/2021</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -91,8 +91,8 @@ function ManagePool(){
        <td>02/10/2021</td>
        <td>12/10/2021</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -103,8 +103,8 @@ function ManagePool(){
        <td>03/10/2021</td>
        <td>13/10/2021</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -115,8 +115,8 @@ function ManagePool(){
        <td>04/10/2021</td>
        <td>14/10/2021</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -127,8 +127,8 @@ function ManagePool(){
        <td>05/10/2021</td>
        <td>15/10/2021</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -139,8 +139,8 @@ function ManagePool(){
        <td>06/10/2021</td>
        <td>16/10/2021</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
   </table>
@@ -151,4 +151,4 @@ function ManagePool(){
     );
 }
 
-export default ManagePool;
+export default ManagePoolAdmin;
