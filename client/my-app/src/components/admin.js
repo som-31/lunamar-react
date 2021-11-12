@@ -21,7 +21,7 @@ function Admin(){
 
     <div>
         <h1 style="text-align:center;">
-            Welcome, {{Manager }}
+            Welcome,
         </h1>
     </div>
 
