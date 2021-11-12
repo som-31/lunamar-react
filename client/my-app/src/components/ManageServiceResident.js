@@ -1,21 +1,17 @@
 import React from 'react';
-import sidenavmanager from './sidenavmanager';
+import { Link } from 'react-router-dom';
 
-function EmbeddedService(){
+function ManageServiceResident(){
 
     return(
         <>
 
-<div class="sidebar">
-    
-  <a href='enabled-services-resident.html'>Manage Service</a>
-  <a href='manage-visitor-residentview.html'>Manage Visitor</a>
-  <a href='upload-pic-video-resident.html'>Upload picture and Video </a>
+<Link to='/manage-service-resident'>Manage Service</Link>
+                    <Link to='/manage-visitor-resident'>Manage Visitor</Link>
+                    <Link to='/photo-video'>Upload Photo/video</Link>
 
-  <a href='chat-resident.html'>Chat</a>
-
-</div>
-    <div id='login-form'class='login-page'>
+                    <Link to='/chat-resident'>Chat</Link>
+                        <div id='login-form'class='login-page'>
       <div class="form-box" style="height: 480px;">
           <div class='button-box'>
                <div id='btn'></div>
@@ -142,4 +138,4 @@ function EmbeddedService(){
     );
 }
 
-export default EmbeddedService;
+export default ManageServiceResident;

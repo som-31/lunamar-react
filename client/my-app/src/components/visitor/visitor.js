@@ -1,19 +1,15 @@
 import React from 'react';
+import VisitorSideNav from './VisitorSideNav';
 
 function Visitor(){
 
     return(
         <>
-    <div class="full-page">
-       
-    
-
-        <div class="sidebar">
-            <a href="visit-apartment-visitor.html">Visit Apartment</a>
-            <a href='visit-garden-visitor.html'>Visit Garden</a>
-            <a href='chat-visitor.html'>Chat</a>
-    
-        </div>
+        <VisitorSideNav/>
+    <div>
+        <h1 style={{"text-align":"center"}}>
+            Welcome
+        </h1>
     </div>
         
 

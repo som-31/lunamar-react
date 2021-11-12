@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Something from './manager/Something';
-import { Link, Redirect } from 'react-router-dom'
 
 
 function something(){
@@ -18,7 +18,6 @@ function Employee(){
             </div>
             <div id='service-form' class='service-page'>
                 <div class="service-sub-block">
-                    {/* <div class="service-sub-block-header"><a href='manager.html' onClick="something()">Manager</a></div> */}
                     <div class="service-sub-block-header"><Link to='/manager'>Manager</Link></div>
                 </div>
             </div>
