@@ -14,7 +14,7 @@ function VisitGarden(){
 <Link to='/chat-visitor'>Chat</Link>
 </div>
     <div id='login-form'class='login-page'>
-      <div class="form-box" style="height: 700px;">
+      <div class="form-box" style={{height: '700px' }}>
           <div class='button-box'>
                <div id='btn'></div>
              
