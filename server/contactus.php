@@ -9,7 +9,7 @@ $_POST = json_decode($rest_json, true);
 
 
 try{
-    $connection = new mysqli("localhost", "root", "", "test1", 4306);
+    $connection = new mysqli("localhost", "root", "", "test1");
     // Check connection
 if ($mysqli -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
