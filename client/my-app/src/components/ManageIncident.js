@@ -1,10 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-function ManageIncident(){
+class ManageIncident extends React.Component {
 
-    return(
-        <>
+  API_PATH = 'http://localhost/projects/lunamar-react/server/manageincident.php'
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      floors: '',
+      total_apartments: '',
+      occupancy: '',
+      dataSent: ''
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(event) {
+    event.preventDefault();
+    console.log('in Submit function');
+    console.log(this.state);
+    axios({
+      method: 'post',
+      url: this.API_PATH,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result.data)
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state)
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+  render() {
+    return (
+
+      <>
 <div class="sidebar">
 
 <Link to='/visit-apartment'>Visit Apartment</Link>
@@ -147,6 +187,7 @@ function ManageIncident(){
 
       </>
     );
+  }
 }
 
 export default ManageIncident;

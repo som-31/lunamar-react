@@ -1,9 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-function ManageAmenitiesManagerview(){
+class ManageAmenitiesManagerview extends React.Component {
 
-    return(
+    API_PATH = 'http://localhost/projects/lunamar-react/server/manageamenitiesmanager.php'
+  
+    constructor(props) {
+      super(props);
+      this.state = {
+        name: '',
+        floors: '',
+        total_apartments: '',
+        occupancy: '',
+        dataSent: ''
+      };
+      this.onSubmit = this.onSubmit.bind(this);
+    }
+  
+    onSubmit(event) {
+      event.preventDefault();
+      console.log('in Submit function');
+      console.log(this.state);
+      axios({
+        method: 'post',
+        url: this.API_PATH,
+        headers: {
+          'content-type': 'application/json'
+        },
+        data: this.state
+      })
+        .then(result => {
+          console.log(result.data)
+          this.setState({
+            dataSent: result.data.sent,
+          })
+          console.log(this.state)
+        })
+        .catch(error => this.setState({
+          error: error.message
+        }));
+    }
+    render() {
+      return (
+  
         <>
   
   <div class="sidebar">
@@ -32,7 +72,8 @@ function ManageAmenitiesManagerview(){
         
 
       </>
-    );
-}
+      );
+    }
+  }
 
 export default ManageAmenitiesManagerview;
