@@ -27,21 +27,21 @@ function VisitGarden(){
    </div>
 <form id='register' class='input-group-register'>
    
-    <input type='text'class='input-field'placeholder='First Name' required> </input>
-    <input type='text'class='input-field'placeholder='Last Name' required></input>
-    <input type='text'class='input-field'placeholder='Visiting Garden Name' required></input>
+    <input type='text'class='input-field'placeholder='First Name' required/> 
+    <input type='text'class='input-field'placeholder='Last Name' required/>
+    <input type='text'class='input-field'placeholder='Visiting Garden Name' required/>
     
    
     
- <input type='text'class='input-field'placeholder='Address' required></input>
- <input type='text'class='input-field'placeholder='State' required></input>
- <input type='text'class='input-field'placeholder='City' required></input>
+ <input type='text'class='input-field'placeholder='Address' required/>
+ <input type='text'class='input-field'placeholder='State' required/>
+ <input type='text'class='input-field'placeholder='City' required/>
  <label for="">Entry At</label>
-    <input type='time'class='input-field'placeholder='Entry At' required></input>
+    <input type='time'class='input-field'placeholder='Entry At' required/>
     <label for="">Exit At</label>
-    <input type='time'class='input-field'placeholder='Exit At' required></input>
-    <input type='number'class='input-field'placeholder='Phone' required></input>
-    <input type="number" class='input-field' placeholder='Zip Code' required></input>
+    <input type='time'class='input-field'placeholder='Exit At' required/>
+    <input type='number'class='input-field'placeholder='Phone' required/>
+    <input type="number" class='input-field' placeholder='Zip Code' required/>
 
               <button type='submit'class='submit-btn'>Submit</button>
      </form>
@@ -63,8 +63,8 @@ function VisitGarden(){
       <td>11:20 PM</td>
       
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -73,8 +73,8 @@ function VisitGarden(){
       <td>8:30 AM</td>
       <td>11:20 PM</td>
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -84,8 +84,8 @@ function VisitGarden(){
       <td>9:00 PM</td>
       
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -95,8 +95,8 @@ function VisitGarden(){
       <td>4:00 PM</td>
    
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -106,8 +106,8 @@ function VisitGarden(){
       <td>12:00 PM</td>
       
       <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
     <tr>
@@ -116,8 +116,8 @@ function VisitGarden(){
       <td>09:00 AM</td>
       <td>1:00 PM</td>
     <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"></img></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"></img></button>
+        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
+      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
   </table>

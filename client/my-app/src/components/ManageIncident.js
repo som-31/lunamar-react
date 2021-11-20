@@ -70,7 +70,7 @@ class ManageIncident extends React.Component {
     <input type='text'class='input-field'placeholder='Visitor Name' required/>
     <br/>
     <br/>
-    <textarea placeholder="Description" class="field" style="border: 1px solid black;"></textarea>
+    <textarea placeholder="Description" class="field" style={{border: '1px solid black' }}></textarea> 
     <input type='text'class='input-field'placeholder='Visiting Apartment Id' required/>
     <br/>
     <br/>
@@ -90,7 +90,7 @@ class ManageIncident extends React.Component {
 
 <div>
     <label for="">Incident At:</label>
-    <input type="time" name="" id="" placeholder="incident_at" class="input-field">    </input>
+    <input type="time" name="" id="" placeholder="incident_at" class="input-field"/>   
 </div>
     <button type='submit'class='submit-btn'>Submit</button>
      </form>

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class ManageBuildingAdmin extends React.Component {
 
-  API_PATH = 'http://localhost/projects/lunamar-react/server/managebuildingadmin.php'
+  INSERT_API = 'http://localhost/projects/lunamar-react/server/managebuildinginsert.php'
 
   constructor(props) {
     super(props);
@@ -24,7 +24,7 @@ class ManageBuildingAdmin extends React.Component {
     console.log(this.state);
     axios({
       method: 'post',
-      url: this.API_PATH,
+      url: this.INSERT_API,
       headers: {
         'content-type': 'application/json'
       },
