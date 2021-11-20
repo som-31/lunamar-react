@@ -4,7 +4,10 @@ import axios from 'axios';
 
 class ManageBuildingManager extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/managebuildinginsert.php'
+  INSERT_API = 'http://localhost/projects/lunamar-react/server/managebuildinginsert.php';
+  // let FETCH_API = 'http://localhost/projects/lunamar-react/server/managebuildingfetch.php';
+
+  
 
   constructor(props) {
     super(props);
@@ -17,6 +20,20 @@ class ManageBuildingManager extends React.Component {
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+// // ComponentDidMount is used to
+//     // execute the code 
+//     componentDidMount() {
+//       fetch(
+//         FETCH_API)
+//           .then((res) => res.json())
+//           .then((json) => {
+//               this.setState({
+//                   items: json,
+//                   DataisLoaded: true
+//               });
+//           })
+//   }
 
   onSubmit(event) {
     event.preventDefault();
