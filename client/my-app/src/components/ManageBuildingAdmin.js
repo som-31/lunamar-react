@@ -6,6 +6,7 @@ class ManageBuildingAdmin extends React.Component {
 
   INSERT_API = 'http://localhost/projects/lunamar-react/server/manageBuildingInsert.php';
   FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
+  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php'
 
   constructor(props) {
     super(props);
@@ -36,8 +37,6 @@ class ManageBuildingAdmin extends React.Component {
     })
       .then(result => {
         console.log(result);
-      //  console.log(JSON.parse(result)); 
-        console.log('in Then Statement')
         this.setState({
           buildingRecords: result.data,
         })
@@ -59,15 +58,51 @@ class ManageBuildingAdmin extends React.Component {
       data: this.state
     })
       .then(result => {
-        console.log(result.data)
         this.setState({
           dataSent: result.data.sent,
         })
-        console.log(this.state)
       })
       .catch(error => this.setState({
         error: error.message
       }));
+  }
+
+  /**
+   * Method to handle delete Logic
+   * @param {*} id 
+   */
+  handleDelete(id){
+    console.log(id);
+    console.log('in here delete function');
+    /**
+     * Request to delete the data from Backend
+     */
+         axios({
+          method: 'post',
+          url: this.DELETE_API,
+          headers: {
+            'content-type': 'application/json'
+          },
+          data: { id }
+        })
+          .then(result => {
+            console.log(result);
+          })
+          .catch(error => {
+                  this.setState({
+                  error: error.message
+                })
+                console.log(error);
+           });
+  }
+
+  /**
+   * Method to handle update logic
+   * @param {*} id 
+   */
+  handleUpdate(id){
+    console.log('in here update function');
+    console.log(id);
   }
 
 
@@ -85,8 +120,8 @@ class ManageBuildingAdmin extends React.Component {
              <td>{occupancy}</td>
              <td>{total_apartments}</td>
              <td>
-                <button><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
+                <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
+                <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
               </td>
           </tr>
        )
@@ -126,13 +161,6 @@ class ManageBuildingAdmin extends React.Component {
                 <h1>Manage Buildings</h1>
               </center>
             </div>
-            {/* <form id='register' class='input-group-register'>
-              <input type='text' class='input-field' placeholder='Name' required />
-              <input type="number" class='input-field' placeholder='Floors' required />
-              <input type='number' class='input-field' placeholder='Total Apartments' required />
-              <input type="number" class="input-field" placeholder="Occupancy" required />
-              <button type='submit' class='submit-btn'>Submit</button>
-            </form> */}
             <form action='' id='register' method='post'>
                                 <input 
                                 type="text" className="field" id="name" placeholder="Your Name" required
@@ -169,70 +197,8 @@ class ManageBuildingAdmin extends React.Component {
             {
               this.renderTableData()
             }
-            {/* <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>23</td>
-              <td>23</td>
-              <td>23</td>
-              <td>
-                <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
-              </td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>43</td>
-              <td>23</td>
-              <td>64</td>
-              <td>
-                <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
-              </td>
-            </tr>
-            <tr>
-              <td>Ernst Handel</td>
-              <td>53</td>
-              <td>23</td>
-              <td>344</td>
-              <td>
-                <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
-              </td>
-            </tr>
-            <tr>
-              <td>Island Trading</td>
-              <td>45</td>
-              <td>23</td>
-              <td>466</td>
-              <td>
-                <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
-              </td>
-            </tr>
-            <tr>
-              <td>Laughing Bacchus Winecellars</td>
-              <td>54</td>
-              <td>466</td>
-              <td>23</td>
-              <td>
-                <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
-              </td>
-            </tr>
-            <tr>
-              <td>Magazzini Alimentari Riuniti</td>
-              <td>53</td>
-              <td>465</td>
-              <td>23</td>
-              <td>
-                <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
-                <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
-              </td>
-            </tr> */}
           </table>
         </center>
-
-
       </>
     );
   }
