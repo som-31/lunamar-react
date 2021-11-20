@@ -10,14 +10,14 @@ $_POST = json_decode($rest_json, true);
 
 try{
   echo("Hi");
-    $connection = new mysqli("localhost", "root", "", "test1");
+    $connection = new mysqli("localhost", "root", "", "test");
     // Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+if ($connection -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $connection -> connect_error;
     exit();
   }
   
-    $stmt = $connection->prepare("INSERT INTO building (name, floors, total_apartments, occupancy) VALUES (?, ?, ?, ?)");
+    $stmt = $connection->prepare("INSERT INTO building (name, floors, total_apartments, occupancy,subdivision_id) VALUES (?, ?, ?, ?,'1')");
     
     $stmt->bind_param("ssss", $_POST['name'], $_POST['floors'], $_POST['total_apartments'], $_POST['occupancy']);
     $stmt->execute();
