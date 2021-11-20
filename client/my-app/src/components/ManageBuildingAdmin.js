@@ -58,9 +58,11 @@ class ManageBuildingAdmin extends React.Component {
       data: this.state
     })
       .then(result => {
+        console.log(result);
         this.setState({
           dataSent: result.data.sent,
         })
+        console.log(this.state);
       })
       .catch(error => this.setState({
         error: error.message
