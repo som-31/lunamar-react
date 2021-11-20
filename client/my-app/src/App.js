@@ -26,6 +26,9 @@ import ManagePlantAdmin from './components/ManagePlantAdmin';
 import ManagePoolAdmin from './components/ManagePoolAdmin';
 import ManagePoolManager from './components/ManagePoolManager';
 import Manager from './components/manager/Manager';
+import Visitor from './components/visitor/Visitor';
+import Resident from './components/resident/Resident';
+
 import ManageVisitorResident from './components/ManageVisitorResident';
 import Register from './components/Register';
 import ServicesInformation from './components/ServicesInformation';
@@ -46,6 +49,10 @@ function App() {
       <Route path="/register" exact> <Register/>  </Route>
       <Route path="/manager" exact><Manager/></Route> 
       <Route path="/superadmin" exact> <SuperAdmin/> </Route>
+      <Route path="/visitor" exact> <Visitor/> </Route>
+
+      <Route path="/resident" exact> <Resident/> </Route>
+
       <Route path="/view-service" exact> <ServicesInformation/> </Route>
 
         <Route path="/manage-pool-admin" exact> <ManagePoolAdmin /> </Route>
