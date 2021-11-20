@@ -4,7 +4,8 @@ import axios from 'axios';
 
 class ManageBuildingAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/managebuildinginsert.php'
+  INSERT_API = 'http://localhost/projects/lunamar-react/server/manageBuildingInsert.php';
+  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
 
   constructor(props) {
     super(props);
@@ -13,15 +14,42 @@ class ManageBuildingAdmin extends React.Component {
       floors: '',
       total_apartments: '',
       occupancy: '',
-      dataSent: ''
+      dataSent: '',
+      buildingRecords: {}
     };
     this.onSubmit = this.onSubmit.bind(this);
+    this.renderTableData = this.renderTableData.bind(this);
+  }
+
+  componentDidMount(){
+
+    /**
+     * Request to get the data from Backend
+     */
+    axios({
+      method: 'post',
+      url: this.FETCH_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+      //  console.log(JSON.parse(result)); 
+        console.log('in Then Statement')
+        this.setState({
+          buildingRecords: result.data,
+        })
+        console.log(this.state)
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
   }
 
   onSubmit(event) {
     event.preventDefault();
-    console.log('in Submit function');
-    console.log(this.state);
     axios({
       method: 'post',
       url: this.INSERT_API,
@@ -41,6 +69,34 @@ class ManageBuildingAdmin extends React.Component {
         error: error.message
       }));
   }
+
+
+  renderTableData() {
+    let buildings = [];
+    for (let index = 0; index < this.state.buildingRecords.length; index++) {
+      buildings[index] = this.state.buildingRecords[index];
+    }
+    return buildings.map((building, index) => {
+       const { id, name, floors, occupancy, total_apartments} = building //destructuring
+       return (
+          <tr key={id}>
+             <td>{name}</td>
+             <td>{floors}</td>
+             <td>{occupancy}</td>
+             <td>{total_apartments}</td>
+             <td>
+                <button><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
+                <button><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
+              </td>
+          </tr>
+       )
+    })
+ }
+
+
+
+
+
   render() {
     return (
 
@@ -106,11 +162,16 @@ class ManageBuildingAdmin extends React.Component {
             <tr>
               <th>Name</th>
               <th>Floors</th>
+              <th>Occupancy</th>
               <th>Total Apartments</th>
               <th>Actions</th>
             </tr>
-            <tr>
+            {
+              this.renderTableData()
+            }
+            {/* <tr>
               <td>Alfreds Futterkiste</td>
+              <td>23</td>
               <td>23</td>
               <td>23</td>
               <td>
@@ -121,6 +182,7 @@ class ManageBuildingAdmin extends React.Component {
             <tr>
               <td>Centro comercial Moctezuma</td>
               <td>43</td>
+              <td>23</td>
               <td>64</td>
               <td>
                 <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
@@ -130,6 +192,7 @@ class ManageBuildingAdmin extends React.Component {
             <tr>
               <td>Ernst Handel</td>
               <td>53</td>
+              <td>23</td>
               <td>344</td>
               <td>
                 <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
@@ -139,6 +202,7 @@ class ManageBuildingAdmin extends React.Component {
             <tr>
               <td>Island Trading</td>
               <td>45</td>
+              <td>23</td>
               <td>466</td>
               <td>
                 <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
@@ -149,6 +213,7 @@ class ManageBuildingAdmin extends React.Component {
               <td>Laughing Bacchus Winecellars</td>
               <td>54</td>
               <td>466</td>
+              <td>23</td>
               <td>
                 <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
                 <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
@@ -158,11 +223,12 @@ class ManageBuildingAdmin extends React.Component {
               <td>Magazzini Alimentari Riuniti</td>
               <td>53</td>
               <td>465</td>
+              <td>23</td>
               <td>
                 <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20" /></button>
                 <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20" /></button>
               </td>
-            </tr>
+            </tr> */}
           </table>
         </center>
 

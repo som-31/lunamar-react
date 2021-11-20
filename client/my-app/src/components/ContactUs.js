@@ -3,7 +3,7 @@ import axios from 'axios'
 
 class ContactUs extends React.Component {
 
-     API_PATH = 'http://localhost/projects/lunamar-react/server/contactus.php'
+     API_PATH = 'http://localhost/projects/lunamar-react/server/contactUs.php'
 
     constructor(props){
         super(props);
@@ -15,6 +15,10 @@ class ContactUs extends React.Component {
             dataSent: ''
         };
         this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    componentDidMount(){
+        console.log('In here Component did mount');
     }
 
     onSubmit(event){
