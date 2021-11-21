@@ -68,7 +68,7 @@ class ManageServiceResident extends React.Component {
 
         <Link to='/chat-resident'>Chat</Link>
         <div id='login-form' class='login-page'>
-          <div class="form-box" style="height: 480px;">
+          <div class="form-box" style={{height: "480px"}}>
             <div class='button-box'>
               <div id='btn'></div>
 

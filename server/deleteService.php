@@ -8,6 +8,10 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 header("Content-Type: application/json; charset=UTF-8");
 
 try{
+    $rest_json = file_get_contents("php://input");
+    $_POST = json_decode($rest_json, true);
+    $id = $_POST['id'];
+
     /**
      * Make connection to database
      */
@@ -18,25 +22,11 @@ try{
         echo "Failed to connect to MySQL: " . $connection -> connect_error;
         exit();
     }
-    $stmt = $connection->prepare("SELECT * FROM building");
-    $stmt->execute();
-    $result = $stmt->get_result();
-  
-    $i =0;
-    $someArray = [];
-    /**
-     * add the data to variable
-     */
-    while ($row = $result->fetch_assoc()) {
-        $someArray[$i] = $row;
-        $i++;
-    }
+    $stmt = $connection->prepare("DELETE FROM services where id = ?");
+    $stmt->bind_param('i', $id);
+    $result = $stmt->execute();
     $connection->close();
-
-    /**
-     * return the data
-     */
-    echo json_encode($someArray);
+    echo $result;
 
 } catch(Exception $e){
   echo $e->getMessage();

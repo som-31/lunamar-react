@@ -4,9 +4,9 @@ import axios from 'axios';
 
 class ManageBuildingAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/manageBuildingInsert.php';
+  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertbuilding.php';
   FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php'
+  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php';
 
   constructor(props) {
     super(props);
@@ -58,9 +58,11 @@ class ManageBuildingAdmin extends React.Component {
       data: this.state
     })
       .then(result => {
+        console.log(result);
         this.setState({
           dataSent: result.data.sent,
         })
+        console.log(this.state);
       })
       .catch(error => this.setState({
         error: error.message
@@ -100,9 +102,29 @@ class ManageBuildingAdmin extends React.Component {
    * Method to handle update logic
    * @param {*} id 
    */
-  handleUpdate(id){
+  handleUpdate(e, id){
     console.log('in here update function');
     console.log(id);
+
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: this.INSERT_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state);
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
   }
 
 

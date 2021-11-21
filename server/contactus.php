@@ -11,34 +11,15 @@ $_POST = json_decode($rest_json, true);
 try{
     $connection = new mysqli("localhost", "root", "", "lunamar", 4306);
     // Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+if ($connection -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $connection -> connect_error;
     exit();
   }
-    // $conn = mysqli_connect("localhost", "root", "", "test1", 4306);
-    // var_dump($connection);
-    // die('in here')
     $stmt = $connection->prepare("INSERT INTO contactus (name, email, phone, query) VALUES (?, ?, ?, ?)");
-    
     $stmt->bind_param("ssss", $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['query']);
-    $stmt->execute();
-    var_dump($stmt);
-
-    // $query = "insert into contactus (name, email, phone, query)
-    // values(
-    // '" . $_POST['name'] . "',
-    // '" . $_POST['email'] . "',
-    // '" . $_POST['phone'] . "',
-    // '" . $_POST['query'] . "',
-    // )";
-    // var_dump($query);
-    // $result = mysqli_query($conn, $query);
-    // var_dump($result);
-    // if ($result) {
-    //     echo json_encode(["sent" => 1, ]);
-    // } else {
-    //     echo json_encode(["sent" => 0, ]);
-    // }
+    $result = $stmt->execute();
+    $connection->close();
+    echo $result;
 } catch(Exception $e){
   echo $e->getMessage();
 }

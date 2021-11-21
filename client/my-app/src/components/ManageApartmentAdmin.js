@@ -96,7 +96,7 @@ class ManageApartmentAdmin extends React.Component {
             <br/>
             <div>
                 <label for="">Select Services</label>
-                <select name="" id="" multiple class="input-field">
+                <select name="" id="" class="input-field">
                     <option value="">Electricity</option>
                     <option value="">Light</option>
                     <option value="">Water</option>

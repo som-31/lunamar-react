@@ -18,7 +18,7 @@ function PhotoVideo(){
         <form >
             <div>
               <label for="file">Choose file to upload</label>
-              <input type="file" name="" id="" style="margin-left: 50%;"> </input>
+              <input type="file" name="" id="" style={{marginleft: "50%" }}> </input> 
             </div>
             <div>
               <button>Submit</button>
