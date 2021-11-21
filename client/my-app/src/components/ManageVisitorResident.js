@@ -10,7 +10,7 @@ function ManageVisitorResident(){
                     <Link to='/photo-video'>Upload Photo/video</Link>
 
                     <Link to='/chat-resident'>Chat</Link>
-  <div id='login-form'class='login-page'>
+  {/* <div id='login-form'class='login-page'>
       <div class="form-box" style={{height: "760px"}}>
           <div class='button-box'>
                <div id='btn'></div>
@@ -19,7 +19,21 @@ function ManageVisitorResident(){
       <center>
           <h1>Manage Visitors</h1>
       </center>
+   </div> */}
+
+   <div id='login-form'class='login-page'>
+      <div class="form-box" style={{height: "760px"}}>
+          <div class='button-box'>
+               <div id='btn'></div>
+            
+          </div>
+       
+   <div class="login-registering">
+      <center>
+          <h1>Manage Visitors</h1>
+      </center>
    </div>
+
 <form id='register' class='input-group-register'>
    
     <input type='text'class='input-field'placeholder='First Name' required />

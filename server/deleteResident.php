@@ -22,7 +22,7 @@ try{
         echo "Failed to connect to MySQL: " . $connection -> connect_error;
         exit();
     }
-    $stmt = $connection->prepare("DELETE FROM building where id = ?");
+    $stmt = $connection->prepare("DELETE FROM resident where id = ?");
     $stmt->bind_param('i', $id);
     $result = $stmt->execute();
     $connection->close();

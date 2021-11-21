@@ -11,7 +11,7 @@ try{
     /**
      * Make connection to database
      */
-    $connection = new mysqli("localhost", "root", "", "lunamar", 4306);
+    $connection = new mysqli("localhost", "root", "", "test");
 
     // Check connection
     if ($connection -> connect_errno) {

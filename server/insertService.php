@@ -10,15 +10,16 @@ $_POST = json_decode($rest_json, true);
 
 try{
   echo("Hi");
-    $connection = new mysqli("localhost", "root", "", "test");
-    // Check connection
+  $connection = new mysqli("localhost", "root", "", "test");
+  // Check connection
 if ($connection -> connect_errno) {
     echo "Failed to connect to MySQL: " . $connection -> connect_error;
     exit();
   }
   
-    $stmt = $connection->prepare("SELECT * FROM `building` WHERE 1");
+    $stmt = $connection->prepare("INSERT INTO services (name, description) VALUES (?, ?)");
     
+    $stmt->bind_param("ssss", $_POST['name'], $_POST['description']);
     $stmt->execute();
     var_dump($stmt);
 

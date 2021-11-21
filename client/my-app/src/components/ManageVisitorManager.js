@@ -15,7 +15,7 @@ function ManageVisitorManager(){
             <Link to='/chat-manager'>Chat</Link>
         </div>
 <div id='login-form'class='login-page'>
-      <div class="form-box" style="height: 760px;">
+      <div class="form-box" style={{height: "760px"}}>
           <div class='button-box'>
                <div id='btn'></div>
                </div>
