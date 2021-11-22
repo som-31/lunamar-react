@@ -12,14 +12,14 @@ try{
   echo("Hi");
   $connection = new mysqli("utacloud2", "rxp3828_user", "Lunamar.db@2021", "rxp3828_Lmr");
       // Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+if ($connection -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $connection -> connect_error;
     exit();
   }
   
-    $stmt = $connection->prepare("INSERT INTO building (name, floors, total_apartments, occupancy) VALUES (?, ?, ?, ?)");
+  $stmt = $connection->prepare("INSERT INTO visitor (first_name, last_name,approval,address,state,city,entry_at,exit_at,phone,zip_code,incident_id,visiting_apartment_id) VALUES (?, ?,?, ?,?, ?,?, ?,?, ?,'1', '1')");
     
-    $stmt->bind_param("ssss", $_POST['name'], $_POST['floors'], $_POST['total_apartments'], $_POST['occupancy']);
+    $stmt->bind_param("ss", $_POST['first_name'], $_POST['last_name'], $_POST['approval'], $_POST['address'], $_POST['state'], $_POST['city'], $_POST['entry_at'], $_POST['exit_at'], $_POST['phone'], $_POST['zip_code'], $_POST['incident_id'], $_POST['visiting_apartment_id']);
     $stmt->execute();
     var_dump($stmt);
 

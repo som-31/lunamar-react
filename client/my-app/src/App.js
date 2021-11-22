@@ -36,6 +36,7 @@ import SuperAdmin from './components/superadmin/SuperAdmin';
 import VisitApartment from './components/VisitApartment';
 import VisitGarden from './components/VisitGarden';
 import ChatAdmin from './components/ChatAdmin';
+import ManageVisitorManager from './components/ManageVisitorManager';
 
 
 function App() {
@@ -77,7 +78,7 @@ function App() {
             <Route exact path='/manage-resident-manager'><ManageResidentManagerview/></Route>
             <Route exact path='/manage-apartment-manager'><ManageApartmentManager/></Route>
             <Route exact path='/manage-service-manager'><ManageServiceManager/></Route>
-            <Route exact path='/manage-visitor-manager'><ManageResidentManagerview/></Route>
+            <Route exact path='/manage-visitor-manager'><ManageVisitorManager/></Route>
             <Route exact path='/manage-amenities-manager'><ManageAmenitiesManagerview/></Route>
             <Route exact path='/chat-manager'><ChatManager/></Route>
 
