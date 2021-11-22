@@ -10,8 +10,8 @@ $_POST = json_decode($rest_json, true);
 
 try{
   echo("Hi");
-    $connection = new mysqli("localhost", "root", "", "test1");
-    // Check connection
+  $connection = new mysqli("utacloud2", "rxp3828_user", "Lunamar.db@2021", "rxp3828_Lmr");
+      // Check connection
 if ($mysqli -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
     exit();

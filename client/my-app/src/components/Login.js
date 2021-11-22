@@ -5,7 +5,7 @@ import axios from 'axios';
 
 class Login extends React.Component {
 
-    API_PATH = 'http://localhost/projects/lunamar-react/server/login.php'
+    API_PATH = 'http://localhost/projects/lunamar-react/server/login.php';
 
     constructor(props){
         super(props);
@@ -77,35 +77,5 @@ class Login extends React.Component {
 
 }
 
-
-
-// function Login(){
-
-//     return (
-//         <>
-//         <BrowserRouter>
-//         <div id='login-form' className='login-page'>
-//             <div className="form-box" style={{height: "470px"}}>
-//                 <div className='button-box'>
-//                     <div id='btn'></div>
-//                 </div>
-//                 <div className="login-heading">
-//                    <center>
-//                        <h1>Login</h1>
-//                    </center>
-//                 </div>
-//                 <form id='login' className='input-group-login'>
-//                     <input type='text'className='input-field'placeholder='Email Id' required />
-// 		    <input type='password'className='input-field'placeholder='Enter Password' required />
-// 		    <input type='checkbox'className='check-box' /><span>Remember Password</span>
-// 		    <button type='submit'className='submit-btn'>Log in</button>
-// 		 </form>
-//          <span>Want to be part of us. Then <Link to='/register' >Register</Link> here.</span>
-//             </div>
-//         </div>
-//         </BrowserRouter>
-//         </>
-//     );
-// }
 
 export default withRouter(Login);

@@ -17,7 +17,7 @@ try{
         echo "Failed to connect to MySQL: " . $connection -> connect_error;
         exit();
     }
-    $stmt = $connection->prepare("SELECT * FROM building");
+    $stmt = $connection->prepare("SELECT * FROM visitor");
     $stmt->execute();
     $result = $stmt->get_result();
   

@@ -1,78 +1,204 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ManageResidentAdminview(){
+import axios from 'axios';
 
-    return(
-        <>
-  
-  <div class="sidebar">
-   <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
+class ManageResidentAdminview extends React.Component {
 
-            <Link to="/manage-building-admin">Manage Building</Link>
-            <Link to='/manage-resident-admin'>Manage Resident</Link>
-            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
-            <Link to='/manage-service-admin'>Manage Service</Link>
-            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
-            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
-            <Link to='/chat-admin'>Chat</Link>
-    </div>
-<div>
+FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchResident.php';
+DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteResident.php';
+
+constructor(props) {
+  super(props);
+  this.state = {
+    resident_name: '',
+    email: '',
+    phone: '',
+    date_of_birth: '',
+    gender: '',
+    dataSent: '',
+    residentRecords: {}
+  };
+  // this.onSubmit = this.onSubmit.bind(this);
+  this.renderTableData = this.renderTableData.bind(this);
+}
+
+componentDidMount(){
+
+  /**
+   * Request to get the data from Backend
+   */
+  axios({
+    method: 'post',
+    url: this.FETCH_API,
+    headers: {
+      'content-type': 'application/json'
+    },
+    data: this.state
+  })
+    .then(result => {
+      console.log(result);
+      this.setState({
+        residentRecords: result.data,
+      })
+      console.log(this.state)
+    })
+    .catch(error => this.setState({
+      error: error.message
+    }));
+}
+
+// onSubmit(event) {
+//   event.preventDefault();
+//   axios({
+//     method: 'post',
+//     url: this.INSERT_API,
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//     data: this.state
+//   })
+//     .then(result => {
+//       console.log(result);
+//       this.setState({
+//         dataSent: result.data.sent,
+//       })
+//       console.log(this.state);
+//     })
+//     .catch(error => this.setState({
+//       error: error.message
+//     }));
+// }
+
+/**
+ * Method to handle delete Logic
+ * @param {*} id 
+ */
+handleDelete(id){
+  console.log(id);
+  console.log('in here delete function');
+  /**
+   * Request to delete the data from Backend
+   */
+       axios({
+        method: 'post',
+        url: this.DELETE_API,
+        headers: {
+          'content-type': 'application/json'
+        },
+        data: { id }
+      })
+        .then(result => {
+          console.log(result);
+        })
+        .catch(error => {
+                this.setState({
+                error: error.message
+              })
+              console.log(error);
+         });
+}
+
+/**
+ * Method to handle update logic
+ * @param {*} id 
+ */
+handleUpdate(e, id){
+  console.log('in here update function');
+  console.log(id);
+
+  e.preventDefault();
+  axios({
+    method: 'post',
+    url: this.INSERT_API,
+    headers: {
+      'content-type': 'application/json'
+    },
+    data: this.state
+  })
+    .then(result => {
+      console.log(result);
+      this.setState({
+        dataSent: result.data.sent,
+      })
+      console.log(this.state);
+    })
+    .catch(error => this.setState({
+      error: error.message
+    }));
+}
+
+
+renderTableData() {
+  let residents = [];
+  for (let index = 0; index < this.state.residentRecords.length; index++) {
+    residents[index] = this.state.residentRecords[index];
+  }
+  return residents.map((resident, index) => {
+     const { id, resident_name, email, phone, date_of_birth,gender} = resident //destructuring
+     return (
+        <tr key={id}>
+           <td>{resident_name}</td>
+           <td>{email}</td>
+           <td>{phone}</td>
+           <td>{date_of_birth}</td>
+           <td>{gender}</td>
+           <td>
+              <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
+              <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
+            </td>
+        </tr>
+     )
+  })
+}
+
+
+
+
+
+render() {
+  return (
+
+    <>
+     <div class="sidebar">
+ <Link to="/manage-reports-admin">Manage Reports</Link>
+      <Link to="/manage-manager">Manage Manager</Link>
+
+          <Link to="/manage-building-admin">Manage Building</Link>
+          <Link to='/manage-resident-admin'>Manage Resident</Link>
+          <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+          <Link to='/manage-service-admin'>Manage Service</Link>
+          <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+          <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+          <Link to='/chat-admin'>Chat</Link>
+  </div>
+
+     
+
+          <div class="login-registering">
+            <center>
+              <h1>Manage Residents</h1>
+            </center>
+
+      </div> <br/><br/>
       <center>
-          <h1>Manage Resident</h1>
+        <table>
+          <tr>
+            <th>Resident Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Actions</th>
+          </tr>
+          {
+            this.renderTableData()
+          }
+        </table>
       </center>
-   </div>
-
-<center>
-    <table>
-        <tr>
-          <th>Resident Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Date of Birth</th>
-          <th>Gender</th>
-          <th>Actions</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Alfreds@lunamar.com</td>
-          <td>6823442324</td>
-          <td>01/01/1990</td>
-          <td>Female</td>
-          <td>
-            <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-          <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-        </td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Centro@lunamar.com</td>
-          <td>6823442324</td>
-          <td>01/01/1990</td>
-          <td>Female</td>
-          <td>
-            <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-          <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-        </td>
-        </tr>
-        <tr>
-          <td>Ernst Handel</td>
-          <td>Ernst@lunamar.com</td>
-          <td>6823442324</td>
-          <td>01/01/1990</td>
-          <td>Female</td>
-          <td>
-            <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-          <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-        </td>
-        </tr>
-      </table>
-    </center>
-        
-
-      </>
-    );
+    </>
+  );
+}
 }
 
 export default ManageResidentAdminview;

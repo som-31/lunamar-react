@@ -15,18 +15,17 @@ function ManageVisitorManager(){
             <Link to='/chat-manager'>Chat</Link>
         </div>
 <div id='login-form'class='login-page'>
-      <div class="form-box" style="height: 760px;">
-          <div class='button-box'>
-               <div id='btn'></div>
-               </div>
+      <div class="form-box" style={{height: "760px"}}>
+      <div class='button-box'>
+              <div id='btn'></div>
+
             </div>
+
+            <div class="login-registering">
+              <center>
+                <h1>Manage Visitor</h1>
+              </center>
             </div>
-               <div class="login-registering">
-      <center>
-          <h1>Manage Visitors</h1>
-        
-      </center>
-   </div>
   
    <form id='register' class='input-group-register'>
    
@@ -52,6 +51,7 @@ function ManageVisitorManager(){
 
              <button type='submit'class='submit-btn'>Submit</button>
     </form>
+    </div> </div>
  <center>
    <table>
        <tr>
