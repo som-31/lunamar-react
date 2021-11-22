@@ -163,13 +163,16 @@ class ManageServiceAdmin extends React.Component {
 
       <>
         <div class="sidebar">
-          <Link to="/manage-building-manager">Manage Building</Link>
-          <Link to='/manage-resident-manager'>Manage Resident</Link>
-          <Link to='/manage-apartment-manager'>Manage Apartment</Link>
-          <Link to='/manage-service-manager'>Manage Service</Link>
-          <Link to='/manage-visitor-manager'>Manage Visitor</Link>
-          <Link to='/manage-amenities-manager'>Manage Amenities</Link>
-          <Link to='/chat-manager'>Chat</Link>
+        <Link to="/manage-reports-admin">Manage Reports</Link>
+        <Link to="/manage-manager">Manage Manager</Link>
+
+            <Link to="/manage-building-admin">Manage Building</Link>
+            <Link to='/manage-resident-admin'>Manage Resident</Link>
+            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+            <Link to='/manage-service-admin'>Manage Service</Link>
+            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+            <Link to='/chat-admin'>Chat</Link>
         </div>
 
         <div id='login-form' class='login-page'>

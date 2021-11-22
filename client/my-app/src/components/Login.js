@@ -1,11 +1,78 @@
 import React from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
+import axios from 'axios';
 
-function Login(){
+class Login extends React.Component {
 
+ 
+  FETCH_API = 'http://localhost/projects/lunamar-react/server/login.php';
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      floors: '',
+      total_apartments: '',
+      occupancy: '',
+      dataSent: '',
+      buildingRecords: {}
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.renderTableData = this.renderTableData.bind(this);
+  }
+
+  componentDidMount(){
+
+    /**
+     * Request to get the data from Backend
+     */
+    axios({
+      method: 'post',
+      url: this.FETCH_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          buildingRecords: result.data,
+        })
+        console.log(this.state)
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+  onSubmit(event) {
+    event.preventDefault();
+    axios({
+      method: 'post',
+      url: this.INSERT_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state);
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+  render() {
     return (
-        <>
-        <BrowserRouter>
+
+      <>
+      <BrowserRouter>
         <div id='login-form' class='login-page'>
             <div class="form-box" style={{height: "470px"}}>
                 <div class='button-box'>
@@ -26,8 +93,9 @@ function Login(){
             </div>
         </div>
         </BrowserRouter>
-        </>
+      </>
     );
+  }
 }
 
 export default Login;
