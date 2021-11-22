@@ -12,12 +12,13 @@ try{
     $connection = new mysqli("utacloud2", "rxp3828_user", "Lunamar.db@2021", "rxp3828_Lmr");
     // Check connection
 if ($connection -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $connection -> connect_error;
+    echo "Failed to connect to MySQL: " . $connection->connect_error;
     exit();
   }
     $stmt = $connection->prepare("INSERT INTO contactus (name, email, phone, query) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['query']);
     $result = $stmt->execute();
+    echo $stmt->errorInfo();
     $connection->close();
     echo $result;
 } catch(Exception $e){
