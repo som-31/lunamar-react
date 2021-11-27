@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class ManageBuildingManager extends React.Component {
+class ManageBuildingAdmin extends React.Component {
 
   INSERT_API = 'http://localhost/projects/lunamar-react/server/insertbuilding.php';
   FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
@@ -159,7 +159,8 @@ class ManageBuildingManager extends React.Component {
 
       <>
        <div class="sidebar">
-  
+   <Link to="/manage-reports-admin">Manage Reports</Link>
+        <Link to="/manage-manager">Manage Manager</Link>
 
             <Link to="/manage-building-admin">Manage Building</Link>
             <Link to='/manage-resident-admin'>Manage Resident</Link>
@@ -225,4 +226,5 @@ class ManageBuildingManager extends React.Component {
   }
 }
 
-export default ManageBuildingManager;
+
+export default ManageBuildingAdmin;

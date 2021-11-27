@@ -1,20 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 
-class ManageBuildingManager extends React.Component {
+class ManageVisitorAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertbuilding.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php';
+  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertVisitor.php';
+  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchVisitor.php';
+  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteVisitor.php';
 
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      floors: '',
-      total_apartments: '',
-      occupancy: '',
+      first_name: '',
+      last_name: '',
+      approval: '',
+      address: '',
+      state: '',
+      city: '',
+      entry_at: '',
+      exit_at: '',
+      phone: '',
+      zip_code: '',
+      total_apartments: '',     
       dataSent: '',
       buildingRecords: {}
     };
@@ -134,13 +142,20 @@ class ManageBuildingManager extends React.Component {
       buildings[index] = this.state.buildingRecords[index];
     }
     return buildings.map((building, index) => {
-       const { id, name, floors, occupancy, total_apartments} = building //destructuring
+       const { id,first_name,last_name,approval,address,state,city,entry_at,exit_at,phone,zip_code} = building //destructuring
        return (
           <tr key={id}>
-             <td>{name}</td>
-             <td>{floors}</td>
-             <td>{occupancy}</td>
-             <td>{total_apartments}</td>
+             <td>{first_name}</td>
+             <td>{last_name}</td>
+             <td>{approval}</td>
+             <td>{address}</td>
+             <td>{state}</td>
+             <td>{city}</td>
+             <td>{entry_at}</td>
+             <td>{exit_at}</td>
+             <td>{phone}</td>
+             <td>{last_name}</td>
+             <td>{zip_code}</td>
              <td>
                 <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
                 <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
@@ -159,7 +174,8 @@ class ManageBuildingManager extends React.Component {
 
       <>
        <div class="sidebar">
-  
+   <Link to="/manage-reports-admin">Manage Reports</Link>
+        <Link to="/manage-manager">Manage Manager</Link>
 
             <Link to="/manage-building-admin">Manage Building</Link>
             <Link to='/manage-resident-admin'>Manage Resident</Link>
@@ -179,41 +195,79 @@ class ManageBuildingManager extends React.Component {
 
             <div class="login-registering">
               <center>
-                <h1>Manage Buildings</h1>
+                <h1>Manage Visitor</h1>
               </center>
             </div>
             <form action='' id='register' method='post'>
                                 <input 
-                                type="text" className="field" id="name" placeholder="Your Name" required
-                                value={this.state.name}
-                                onChange={e => this.setState({ name: e.target.value })} />
-                                <input type="number" className="field" id="floors" placeholder="Floors" required
-                                value={this.state.floors}
-                                onChange={e => this.setState({ floors: e.target.value })}
+                                type="text" className="field" id="first_name" placeholder="First Name" required
+                                value={this.state.first_name}
+                                onChange={e => this.setState({ first_name: e.target.value })} />
+                                <input 
+                                type="text" className="field" id="last_name" placeholder="Last Name" required
+                                value={this.state.last_name}
+                                onChange={e => this.setState({ last_name: e.target.value })} />
+                                <input type="boolean" className="field" id="approval" placeholder="Approval" required
+                                value={this.state.approval}
+                                onChange={e => this.setState({ approval: e.target.value })}
                                 />
-                                <input type="number" className="field" id="total_apartments" placeholder="Total Apartments"  required 
-                                value={this.state.total_apartments}
-                                onChange={e => this.setState({ total_apartments: e.target.value })}
+
+<input type="text" className="field" id="address" placeholder="Address" required
+                                value={this.state.address}
+                                onChange={e => this.setState({ address: e.target.value })}
                                 />
-                                <input type="number" className="field" placeholder="Occupancy" id="occupancy" required
-                                value={this.state.occupancy}
-                                onChange={e => this.setState({ occupancy: e.target.value })}
+
+<input type="text" className="field" id="state" placeholder="State" required
+                                value={this.state.state}
+                                onChange={e => this.setState({ state: e.target.value })}
                                 />
+
+<input type="text" className="field" id="city" placeholder="City" required
+                                value={this.state.city}
+                                onChange={e => this.setState({ city: e.target.value })}
+                                />
+
+<input type="time" className="field" id="entry_at" placeholder="Entry at"  required 
+                                value={this.state.entry_at}
+                                onChange={e => this.setState({ entry_at: e.target.value })}
+                                />
+                                <input type="time" className="field" id="exit_at" placeholder="Exit at"  required 
+                                value={this.state.exit_at}
+                                onChange={e => this.setState({ exit_at: e.target.value })}
+                                />
+                                
+                                <input type="number" className="field" id="phone" placeholder="Phone"  required 
+                                value={this.state.phone}
+                                onChange={e => this.setState({ phone: e.target.value })}
+                                />
+
+<input type="number" className="field" id="zip_code" placeholder="Zip Code"  required 
+                                value={this.state.zip_code}
+                                onChange={e => this.setState({ zip_code: e.target.value })}
+                                />
+
+                               
                                 <input type="submit" 
                                 value="Submit" 
                                 onClick={e => this.onSubmit(e)} 
                                 className="submit-btn" />
                             </form>
           </div>
-        </div>
+        </div> <br/> 
+        <br/> <br/>
         <center>
           <table>
             <tr>
-              <th>Name</th>
-              <th>Floors</th>
-              <th>Occupancy</th>
-              <th>Total Apartments</th>
-              <th>Actions</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Approval</th>
+              <th>Address</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Entry at</th>
+              <th>Exit at</th>
+              <th>Phone</th>
+              <th>Zip code</th>
             </tr>
             {
               this.renderTableData()
@@ -225,4 +279,4 @@ class ManageBuildingManager extends React.Component {
   }
 }
 
-export default ManageBuildingManager;
+export default ManageVisitorAdmin;
