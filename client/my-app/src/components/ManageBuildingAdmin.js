@@ -5,7 +5,7 @@ import axios from 'axios';
 class ManageBuildingAdmin extends React.Component {
 
   INSERT_API = 'http://localhost/projects/lunamar-react/server/insertbuilding.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
+  FETCH_API = 'http://localhost:8000/api/buildingList/';
   DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php';
 
   constructor(props) {
