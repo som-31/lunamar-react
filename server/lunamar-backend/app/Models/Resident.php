@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Resident extends Model
 {
     public $table = "resident";
+    public $timestamps = false;
 
     use HasFactory;
 }

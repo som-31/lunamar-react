@@ -5,7 +5,8 @@ import axios from 'axios';
 class ManageApartmentAdmin extends React.Component {
 
   FETCH_API = 'http://localhost:8000/api/apartmentList/';
-
+  INSERT_API = 'http://localhost:8000/api/saveApartment/';
+  DELETE_API = 'http://localhost:8000/api/deleteApartment/';
   constructor(props) {
     super(props);
     this.state = {

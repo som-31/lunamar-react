@@ -8,9 +8,9 @@ import axios from 'axios';
 class ManageServiceAdmin extends React.Component {
 
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertService.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchService.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteService.php';
+  INSERT_API = 'http://localhost:8000/api/saveServices/';
+  FETCH_API = 'http://localhost:8000/api/servicesList/';
+  DELETE_API = 'http://localhost:8000/api/deleteServices/';
 
   constructor(props) {
     super(props);
@@ -86,7 +86,7 @@ class ManageServiceAdmin extends React.Component {
      */
     axios({
       method: 'post',
-      url: this.DELETE_API,
+      url: this.DELETE_API+id,
       headers: {
         'content-type': 'application/json'
       },

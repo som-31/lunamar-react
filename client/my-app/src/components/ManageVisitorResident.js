@@ -174,18 +174,14 @@ class ManageVisitorManager extends React.Component {
     return (
 
       <>
-       <div class="sidebar">
-   <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
+     <div class="sidebar">
+        <Link to='/manage-service-resident'>Manage Service</Link>
+        <Link to='/manage-visitor-resident'>Manage Visitor</Link>
+        <Link to='/photo-video'>Upload Photo/video</Link>
 
-            <Link to="/manage-building-admin">Manage Building</Link>
-            <Link to='/manage-resident-admin'>Manage Resident</Link>
-            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
-            <Link to='/manage-service-admin'>Manage Service</Link>
-            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
-            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
-            <Link to='/chat-admin'>Chat</Link>
-    </div>
+        <Link to='/chat-resident'>Chat</Link>
+      </div>
+
 
         <div id='login-form' class='login-page'>
           <div class="form-box">

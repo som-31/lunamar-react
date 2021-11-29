@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Incident extends Model
 {
     public $table = "incident";
+    public $timestamps = false;
 
     use HasFactory;
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Garden extends Model
 {
     public $table = "garden";
+    public $timestamps = false;
 
     use HasFactory;
 }

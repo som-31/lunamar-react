@@ -4,9 +4,11 @@ import axios from 'axios';
 
 class ManageBuildingManager extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertbuilding.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php';
+  
+
+  INSERT_API = 'http://localhost:8000/api/saveBuilding/';
+  FETCH_API = 'http://localhost:8000/api/buildingList/';
+  DELETE_API = 'http://localhost:8000/api/deleteBuilding/';
 
   constructor(props) {
     super(props);
@@ -48,6 +50,7 @@ class ManageBuildingManager extends React.Component {
   }
 
   onSubmit(event) {
+    console.log("inside submit")
     event.preventDefault();
     axios({
       method: 'post',
@@ -81,7 +84,7 @@ class ManageBuildingManager extends React.Component {
      */
          axios({
           method: 'post',
-          url: this.DELETE_API,
+          url: this.DELETE_API+id,
           headers: {
             'content-type': 'application/json'
           },
@@ -159,8 +162,7 @@ class ManageBuildingManager extends React.Component {
 
       <>
        <div class="sidebar">
-  
-
+   
             <Link to="/manage-building-admin">Manage Building</Link>
             <Link to='/manage-resident-admin'>Manage Resident</Link>
             <Link to='/manage-apartment-admin'>Manage Apartment</Link>

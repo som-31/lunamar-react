@@ -8,15 +8,16 @@ import axios from 'axios';
 class ManageServiceResident extends React.Component {
 
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertService.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchService.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteService.php';
+  INSERT_API = 'http://localhost:8000/api/saveServices/';
+  FETCH_API = 'http://localhost:8000/api/servicesList/';
+  DELETE_API = 'http://localhost:8000/api/deleteServices/';
 
   constructor(props) {
     super(props);
     this.state = {
       name: '',
       description: '',
+      dataSent: '',
 
       serviceRecords: {}
     };
@@ -85,7 +86,7 @@ class ManageServiceResident extends React.Component {
      */
     axios({
       method: 'post',
-      url: this.DELETE_API,
+      url: this.DELETE_API+id,
       headers: {
         'content-type': 'application/json'
       },
@@ -162,13 +163,14 @@ class ManageServiceResident extends React.Component {
     return (
 
       <>
-        <div class="sidebar">
-          <Link to='/manage-service-resident'>Manage Service</Link>
-          <Link to='/manage-visitor-resident'>Manage Visitor</Link>
-          <Link to='/photo-video'>Upload Photo/video</Link>
+          <div class="sidebar">
+        <Link to='/manage-service-resident'>Manage Service</Link>
+        <Link to='/manage-visitor-resident'>Manage Visitor</Link>
+        <Link to='/photo-video'>Upload Photo/video</Link>
 
-          <Link to='/chat-resident'>Chat</Link>
-        </div>
+        <Link to='/chat-resident'>Chat</Link>
+      </div>
+
 
         <div id='login-form' class='login-page'>
           <div class="form-box">

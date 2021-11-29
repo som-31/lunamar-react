@@ -130,6 +130,8 @@ class ManageBuildingAdmin extends React.Component {
 
 
   renderTableData() {
+    console.log("inside table");
+
     let buildings = [];
     for (let index = 0; index < this.state.buildingRecords.length; index++) {
       buildings[index] = this.state.buildingRecords[index];
@@ -161,7 +163,7 @@ class ManageBuildingAdmin extends React.Component {
       <>
        <div class="sidebar">
    <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
+        <Link to="/manage-manager-admin">Manage Manager</Link>
 
             <Link to="/manage-building-admin">Manage Building</Link>
             <Link to='/manage-resident-admin'>Manage Resident</Link>
