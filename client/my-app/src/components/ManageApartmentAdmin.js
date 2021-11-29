@@ -7,13 +7,14 @@ class ManageApartmentAdmin extends React.Component {
   FETCH_API = 'http://localhost:8000/api/apartmentList/';
   INSERT_API = 'http://localhost:8000/api/saveApartment/';
   DELETE_API = 'http://localhost:8000/api/deleteApartment/';
+  
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      subdivision_name: '',
       floors: '',
-      total_apartments: '',
-      occupancy: '',
+      services: '',
+      owner_name: '',
       dataSent: '',
       buildingRecords: {}
 

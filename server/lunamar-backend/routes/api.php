@@ -70,6 +70,10 @@ Route::post('/managerList',[ManagerController::class,'managerList']);
 Route::post('/saveManager',[ManagerController::class,'saveManager']);
 Route::post('/deleteManager/{id}',[ManagerController::class,'deleteManager']);
 
+Route::post('/residentList',[ResidentController::class,'residentList']);
+Route::post('/saveResident',[ResidentController::class,'saveResident']);
+Route::post('/deleteResident/{id}',[ResidentController::class,'deleteResident']);
+
 Route::post('/plantList',[PlantController::class,'plantList']);
 Route::post('/savePlant',[PlantController::class,'savePlant']);
 Route::post('/deletePlant/{id}',[PlantController::class,'deletePlant']);
