@@ -39,13 +39,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register',[UserController::class,'register']);
 
 Route::post('/buildingList',[BuildingController::class,'buildingList']);
-
 Route::post('/saveBuilding',[BuildingController::class,'saveBuilding']);
+Route::post('/deleteBuilding/{id}',[BuildingController::class,'deleteBuilding']);
 
-Route::post('/managerList',[BuildingController::class,'managerList']);
+Route::post('/managerList',[ManagerController::class,'managerList']);
 
 Route::post('/apartmentList',[ApartmentController::class,'apartmentList']);
 Route::post('/servicesList',[ServicesController::class,'servicesList']);
 
 
-Route::post('/deleteBuilding/{id}',[BuildingController::class,'deleteBuilding']);
