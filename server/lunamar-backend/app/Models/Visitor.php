@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Visitor extends Model
 {
+    public $table = "visitor";
+
     use HasFactory;
 }

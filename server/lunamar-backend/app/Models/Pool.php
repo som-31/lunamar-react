@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pool extends Model
 {
+    public $table = "pool";
+
     use HasFactory;
 }

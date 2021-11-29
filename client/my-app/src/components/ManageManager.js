@@ -5,18 +5,18 @@ import axios from 'axios';
 class ManageManagerAdmin extends React.Component {
 
   INSERT_API = 'http://localhost/projects/lunamar-react/server/insertManager.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchmanager.php';
+  FETCH_API = 'http://localhost:8000/api/buildingList/';
   DELETE_API = 'http://localhost/projects/lunamar-react/server/deletemanager.php';
 
   constructor(props) {
     super(props);
     this.state = {
-      ManagerName: '',
-      Email: '',
-      Phone: '',
-      DateofBirth: '',
-      Gender: '',
-      Actions: '',
+      first_name: '',
+      last_name: '',
+      email_id: '',
+      phone: '',
+      date_of_birth:'',
+      gender: '',
       dataSent: '',
       managerRecords: {}
     };
@@ -131,20 +131,22 @@ class ManageManagerAdmin extends React.Component {
 
 
   renderTableData() {
-    let manager = [];
+    let managers = [];
     for (let index = 0; index < this.state.managerRecords.length; index++) {
-      manager[index] = this.state.managerRecords[index];
+      managers[index] = this.state.managerRecords[index];
     }
-    return manager.map((manager, index) => {
-       const { id,ManagerName,Email,Phone,DateofBirth,Gender} = manager //destructuring
+    return managers.map((manager, index) => {
+       const { id,first_name,last_name,email_id,phone,date_of_birth,gender} = manager //destructuring
       
        return (
           <tr key={id}>
-             <td>{ManagerName}</td>
-             <td>{Email}</td>
-             <td>{Phone}</td>
-             <td>{DateofBirth}</td>
-             <td>{Gender}</td>
+             <td>{first_name}</td>
+             <td>{last_name}</td>
+
+             <td>{email_id}</td>
+             <td>{phone}</td>
+             <td>{date_of_birth}</td>
+             <td>{gender}</td>
            <td>
                 <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
                 <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
@@ -195,6 +197,26 @@ render(){
                 <button type='submit'class='submit-btn'>Register</button></form>
               </div>
               </div>
+              <br/>
+
+              <center>
+          <table>
+            <tr>
+              <th>First nam</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Date of Birth</th>
+
+              <th>Gender</th>
+
+              <th>Actions</th>
+            </tr>
+            {
+              this.renderTableData()
+            }
+          </table>
+        </center>
                 
       </>
     );

@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EnabledService extends Model
 {
+    public $table = "enabled_service";
+
     use HasFactory;
 }

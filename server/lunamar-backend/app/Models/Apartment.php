@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
+    public $table = "apartment";
+
     use HasFactory;
 }

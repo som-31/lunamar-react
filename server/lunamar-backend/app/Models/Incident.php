@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incident extends Model
 {
+    public $table = "incident";
+
     use HasFactory;
 }

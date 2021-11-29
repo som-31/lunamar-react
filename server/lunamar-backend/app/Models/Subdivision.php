@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subdivision extends Model
 {
+    public $table = "subdivision";
+
     use HasFactory;
 }
