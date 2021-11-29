@@ -160,9 +160,8 @@ render(){
         <>
        <div class="sidebar">
    <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
 
-            <Link to="/manage-manager-admin">Manage manager</Link>
+            <Link to="/manage-manager-admin">Manage Manager</Link>
             <Link to='/manage-resident-admin'>Manage Resident</Link>
             <Link to='/manage-apartment-admin'>Manage Apartment</Link>
             <Link to='/manage-service-admin'>Manage Service</Link>
@@ -171,7 +170,7 @@ render(){
             <Link to='/chat-admin'>Chat</Link>
     </div>
       <div id='login-form'class='login-page'>
-      <div class="form-box" style="height: 650px;">
+      <div class="form-box" style={{height:"650 px"}}>
           <div class='button-box'>
                <div id='btn'></div>
               </div>     
@@ -187,9 +186,9 @@ render(){
                 <p>Please enter your date of birth</p>
                 <input type="date" class="input-field" placeholder="Date of Birth" required/>
                 <p>Please select your gender</p>
-                <input type="radio" id="male" value="male">Male</input>
-                <input type="radio" id="female" value="female">Female</input>
-                <input type="radio" id="others" value="others">Others</input>
+                <input type="radio" id="male" value="male"/>Male
+                <input type="radio" id="female" value="female"/>Female
+                <input type="radio" id="others" value="others"/>Others
                 <input type='password'class='input-field'placeholder='Enter Password' required/>
                 <input type='password'class='input-field'placeholder='Confirm Password'  required/>
                 <input type='checkbox'class='check-box'/><span>I agree to the terms and conditions</span>

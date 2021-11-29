@@ -162,7 +162,7 @@ render() {
     <>
      <div class="sidebar">
  <Link to="/manage-reports-admin">Manage Reports</Link>
-      <Link to="/manage-manager">Manage Manager</Link>
+ <Link to="/manage-manager-admin">Manage Manager</Link>
 
           <Link to="/manage-building-admin">Manage Building</Link>
           <Link to='/manage-resident-admin'>Manage Resident</Link>
