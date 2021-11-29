@@ -173,6 +173,7 @@ render(){
             <Link to='/manage-amenities-admin'>Manage Amenities</Link>
             <Link to='/chat-admin'>Chat</Link>
     </div>
+    
       <div id='login-form'class='login-page'>
       <div class="form-box" style={{height:"650 px"}}>
           <div class='button-box'>
