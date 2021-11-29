@@ -45,3 +45,4 @@ Route::post('/saveBuilding',[BuildingController::class,'saveBuilding']);
 Route::post('/managerList',[BuildingController::class,'managerList']);
 
 Route::post('/apartmentList',[ApartmentController::class,'apartmentList']);
+Route::post('/servicesList',[ServicesController::class,'servicesList']);

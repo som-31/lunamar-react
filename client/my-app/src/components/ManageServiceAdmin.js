@@ -17,6 +17,7 @@ class ManageServiceAdmin extends React.Component {
     this.state = {
       name: '',
       description: '',
+      dataSent: '',
 
       serviceRecords: {}
     };

@@ -9,7 +9,7 @@ class ManageServiceManager extends React.Component {
 
 
   INSERT_API = 'http://localhost/projects/lunamar-react/server/insertService.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchService.php';
+  FETCH_API = 'http://localhost:8000/api/servicesList/';
   DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteService.php';
 
   constructor(props) {
