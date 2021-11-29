@@ -17,7 +17,6 @@ class ManagePoolManager extends React.Component {
       ClosingingHour: '',
       LastInspectionAt: '',
       NextInspectionAt: '',
-      SubdivisionName: '',
       Actions: '',
       poolRecords: {}
     };
@@ -138,15 +137,14 @@ class ManagePoolManager extends React.Component {
       plants[index] = this.state.plantRecords[index];
     }
     return plants.map((plant, index) => {
-       const {PoolId, SubdivisionName, OpeningHour, ClosingingHour, LastInspectionAt, NextInspectionAt, SubdivisionName} = plant //destructuring
+       const {id, SubdivisionName, OpeningHour, ClosingingHour, LastInspectionAt, NextInspectionAt} = plant //destructuring
        return (
-          <tr key={PoolId}>
+          <tr key={id}>
              <td>{SubdivisionName}</td>
              <td>{OpeningHour}</td>
              <td>{ClosingingHour}</td>
              <td>{LastInspectionAt}</td>
              <td>{NextInspectionAt}</td>
-             <td>{SubdivisionName}</td>
              <td>
                 <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
                 <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>

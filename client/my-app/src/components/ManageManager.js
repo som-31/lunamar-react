@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class ManageManagerAdmin extends React.Component {
 
@@ -135,7 +136,8 @@ class ManageManagerAdmin extends React.Component {
       manager[index] = this.state.managerRecords[index];
     }
     return manager.map((manager, index) => {
-       const { Phone} = manager //destructuring
+       const { id,ManagerName,Email,Phone,DateofBirth,Gender} = manager //destructuring
+      
        return (
           <tr key={id}>
              <td>{ManagerName}</td>

@@ -18,7 +18,6 @@ class ManagePoolAdmin extends React.Component {
       ClosingingHour: '',
       LastInspectionAt: '',
       NextInspectionAt: '',
-      SubdivisionName: '',
       Actions: '',
       poolRecords: {}
     };
@@ -139,9 +138,9 @@ class ManagePoolAdmin extends React.Component {
       plants[index] = this.state.plantRecords[index];
     }
     return plants.map((plant, index) => {
-       const {PoolId, SubdivisionName, OpeningHour, ClosingingHour, LastInspectionAt, NextInspectionAt, SubdivisionName} = plant //destructuring
+       const {id, SubdivisionName, OpeningHour, ClosingingHour, LastInspectionAt, NextInspectionAt} = plant //destructuring
        return (
-          <tr key={PoolId}>
+          <tr key={id}>
              <td>{SubdivisionName}</td>
              <td>{OpeningHour}</td>
              <td>{ClosingingHour}</td>

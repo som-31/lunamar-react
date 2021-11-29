@@ -14,7 +14,6 @@ class ManagePlantAdmin extends React.Component {
       PlantType: '',
       PlantName: '',
       Description: '',
-  
       plantRecords: {}
     };
     this.onSubmit = this.onSubmit.bind(this);
@@ -133,11 +132,11 @@ class ManagePlantAdmin extends React.Component {
       plants[index] = this.state.plantRecords[index];
     }
     return plants.map((plant, index) => {
-       const {PlantType, PlantType, Description } = plant //destructuring
+       const {id,PlantType, PlantName, Description } = plant //destructuring
        return (
           <tr key={id}>
              <td>{PlantType}</td>
-             <td>{PlantType}</td>
+             <td>{PlantName}</td>
              <td>{Description}</td>
              <td>
                 <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
