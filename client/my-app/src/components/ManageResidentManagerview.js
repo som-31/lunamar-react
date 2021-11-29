@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import axios from 'axios';
 
 class ManageResidentManagerview extends React.Component {
 
+INSERT_API = 'http://localhost/projects/lunamar-react/server/insertResident.php';    
 FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchResident.php';
 DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteResident.php';
 

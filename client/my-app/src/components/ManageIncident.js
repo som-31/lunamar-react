@@ -86,7 +86,6 @@ class ManageIncident extends React.Component {
     <br/>
     <br/>
  
- 
 
 <div>
     <label for="">Incident At:</label>

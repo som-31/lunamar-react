@@ -9,22 +9,21 @@ function ServicesInformation(){
             <div class="service-sub-block">
                 <div class="service-sub-block-header">Manage Building</div>
                 <div class="service-sub-block-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                Light: String lights hung over your kitchen cabinets or along the beat of forming are unnoticeable, in any case make a warm, cheerful touch. Every place in a Lunamar is perfectly lightened by beautiful lights.
                 </div>
             </div>
             <div class="service-sub-block">
                 <div class="service-sub-block-header">Manage Garden and Surroundings</div>
                 <div class="service-sub-block-text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                Electricity: We provide electricity of high watts and always make sure that good electricity carriers are providing in perfect budget.
                 </div>
             </div>
             <div class="service-sub-block">
                 <div class="service-sub-block-header">Manage Visitors</div>
-           
-            <div class="service-sub-block-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                <div class="service-sub-block-text">
+                Light:String lights hung over your kitchen cabinets or along the beat of forming are unnoticeable, in any case make a warm, cheerful touch. Every place in a Lunamar is perfectly lightened by beautiful lights.Electricity:We provide electricity of high watts and always make sure that good electricity carriers are providing in perfect budget.Water:At Lunamar we make sure that water is supplying to each apartment on a regular basis and rules about the usage of water is following by each person throughout the Lunamar.
+                </div>
             </div>
-        </div>
         </div>
         </>
     );
