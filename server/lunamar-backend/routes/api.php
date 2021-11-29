@@ -46,3 +46,6 @@ Route::post('/managerList',[BuildingController::class,'managerList']);
 
 Route::post('/apartmentList',[ApartmentController::class,'apartmentList']);
 Route::post('/servicesList',[ServicesController::class,'servicesList']);
+
+
+Route::post('/deleteBuilding/{id}',[BuildingController::class,'deleteBuilding']);

@@ -6,7 +6,7 @@ class ManageBuildingAdmin extends React.Component {
 
   INSERT_API = 'http://localhost:8000/api/saveBuilding/';
   FETCH_API = 'http://localhost:8000/api/buildingList/';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php';
+  DELETE_API = 'http://localhost:8000/api/deleteBuilding/';
 
   constructor(props) {
     super(props);
@@ -48,6 +48,7 @@ class ManageBuildingAdmin extends React.Component {
   }
 
   onSubmit(event) {
+    console.log("inside submit")
     event.preventDefault();
     axios({
       method: 'post',
@@ -81,7 +82,7 @@ class ManageBuildingAdmin extends React.Component {
      */
          axios({
           method: 'post',
-          url: this.DELETE_API,
+          url: this.DELETE_API+id,
           headers: {
             'content-type': 'application/json'
           },
