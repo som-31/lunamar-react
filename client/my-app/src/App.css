@@ -395,11 +395,11 @@ a
 {
 	margin: 30px 10px 34px 0;
 }
-span
+#login-span
 {
 	color: black;
 	font-size:14px;
-	bottom:68px;
+	bottom:20px;
 	position:absolute;
 }
 #login
