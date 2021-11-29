@@ -15,13 +15,25 @@ class BuildingController extends Controller
     {
         $building = new Building;
         $building->name=$req->input('name');
-        $building->name=$req->input('floors');
-        $building->name=$req->input('occupancy');
-        $building->name=$req->input('total_apartments');
+        $building->floors=$req->input('floors');
+        $building->occupancy=$req->input('occupancy');
+        $building->total_apartments=$req->input('total_apartments');
+        $building->save();
+        return $building;
     }
 
     function buildingList()
     {
         return Building::all();
+    }
+
+    function deleteBuilding($id)
+    {
+        $result= Building :: where('id',$id)->delete();
+
+        if($result)
+        {
+            return["result"=>"Data has been deleted"];
+        }
     }
 }
