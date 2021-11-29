@@ -4,9 +4,9 @@ import axios from 'axios';
 
 class ManageManagerAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertManager.php';
-  FETCH_API = 'http://localhost:8000/api/buildingList/';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deletemanager.php';
+  FETCH_API = 'http://localhost:8000/api/managerList/';
+  INSERT_API = 'http://localhost:8000/api/saveManager/';
+  DELETE_API = 'http://localhost:8000/api/deleteManager/';
 
   constructor(props) {
     super(props);

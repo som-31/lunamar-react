@@ -4,9 +4,9 @@ import axios from 'axios';
 
 class ManageVisitorManager extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertVisitor.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchVisitor.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteVisitor.php';
+  FETCH_API = 'http://localhost:8000/api/visitorList/';
+  INSERT_API = 'http://localhost:8000/api/saveVisitor/';
+  DELETE_API = 'http://localhost:8000/api/deleteVisitor/';
 
   constructor(props) {
     super(props);

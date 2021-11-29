@@ -4,7 +4,9 @@ import axios from 'axios';
 
 class ManageIncident extends React.Component {
 
-  API_PATH = 'http://localhost/projects/lunamar-react/server/manageincident.php'
+  FETCH_API = 'http://localhost:8000/api/incidentList/';
+  INSERT_API = 'http://localhost:8000/api/saveIncident/';
+  DELETE_API = 'http://localhost:8000/api/deleteIncident/';
 
   constructor(props) {
     super(props);

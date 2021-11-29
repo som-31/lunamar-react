@@ -4,9 +4,9 @@ import axios from 'axios';
 
 class ManagePlantAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertplant.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchplant.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteplant.php';
+  FETCH_API = 'http://localhost:8000/api/plantList/';
+  INSERT_API = 'http://localhost:8000/api/savePlant/';
+  DELETE_API = 'http://localhost:8000/api/deletePlant/';
 
   constructor(props) {
     super(props);

@@ -4,9 +4,10 @@ import axios from 'axios';
 
 class ManageResidentAdminview extends React.Component {
 
-INSERT_API = 'http://localhost/projects/lunamar-react/server/insertResident.php';  
-FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchResident.php';
-DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteResident.php';
+
+  FETCH_API = 'http://localhost:8000/api/residentList/';
+  INSERT_API = 'http://localhost:8000/api/saveResident/';
+  DELETE_API = 'http://localhost:8000/api/deleteResident/';
 
 constructor(props) {
   super(props);

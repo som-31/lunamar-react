@@ -3,8 +3,9 @@ import axios from 'axios'
 
 class ContactUs extends React.Component {
 
-     API_PATH = 'http://localhost/projects/lunamar-react/server/contactUs.php'
-
+    FETCH_API = 'http://localhost:8000/api/contactusList/';
+    INSERT_API = 'http://localhost:8000/api/saveContactus/';
+    DELETE_API = 'http://localhost:8000/api/deleteContactus/';
     constructor(props){
         super(props);
         this.state = {

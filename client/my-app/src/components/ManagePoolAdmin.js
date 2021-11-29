@@ -5,9 +5,10 @@ import axios from 'axios';
 
 class ManagePoolAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertplant.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchplant.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteplant.php';
+  FETCH_API = 'http://localhost:8000/api/poolList/';
+  INSERT_API = 'http://localhost:8000/api/savePool/';
+  DELETE_API = 'http://localhost:8000/api/deletePool/';
+
 
   constructor(props) {
     super(props);

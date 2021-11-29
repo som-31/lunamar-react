@@ -4,7 +4,9 @@ import axios from 'axios';
 
 class ManageGardenAdmin extends React.Component {
 
-  API_PATH = 'http://localhost/projects/lunamar-react/server/managegardenadmin.php'
+  FETCH_API = 'http://localhost:8000/api/gardenList/';
+  INSERT_API = 'http://localhost:8000/api/saveGarden/';
+  DELETE_API = 'http://localhost:8000/api/deleteGarden/';
 
   constructor(props) {
     super(props);
