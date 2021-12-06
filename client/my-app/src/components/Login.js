@@ -1,9 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
+import {SERVER_URL} from "../lib/constants";
 
 class Login extends React.Component {
-    API_PATH = "http://localhost:8000/api/login/";
+
+    API_PATH = SERVER_URL+'/login';
+
     constructor(props){
         super(props);
         this.state = {
@@ -14,17 +17,23 @@ class Login extends React.Component {
         };
         this.handleFormValidations = this.handleFormValidations.bind(this);
     }
+
     handleFormValidations(){
+
         let errors = {};
         let formIsValid = true;
+
+
         //Email
         if (!this.state.email) {
             formIsValid = false;
             errors["email"] = "Cannot be empty";
         }
+
         if (typeof this.state.email !== "undefined") {
             let lastAtPos = this.state.email.lastIndexOf("@");
             let lastDotPos = this.state.email.lastIndexOf(".");
+
             if (
                 !(
                     lastAtPos < lastDotPos &&
@@ -66,17 +75,22 @@ class Login extends React.Component {
                             case 15:
                                 this.props.history.push('/superadmin');
                                 break;
+
                             case 16:
                                 this.props.history.push('/manager');
                                 break;
+
                             case 18:
                                 this.props.history.push('/resident');
                                 break;
+
                             case 19:
                                 this.props.history.push('/visitor');
                                 break;
+
                             default:
                                 this.props.history.push('/resident');
+
                         }
                         // console.log(this.state)
                         // this.props.history.push('/manager');
@@ -120,14 +134,14 @@ class Login extends React.Component {
             />
                     <span style={{ color: "red" }}>{this.state.errors["email"]}</span>
                     <br />
-            <input type='password'className='input-field'placeholder='Enter Password' required 
+		    <input type='password'className='input-field'placeholder='Enter Password' required 
             value={this.state.password} onChange={e => this.setState({ password: e.target.value })}
             />
                     <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
                     <br />
-            <input type='checkbox'className='check-box' /><span>Remember Password</span>
-            <input type='submit'className='submit-btn' value='Sign In' onClick={e => this.onSubmit(e)}/>
-         </form>
+		    <input type='checkbox'className='check-box' /><span>Remember Password</span>
+		    <input type='submit'className='submit-btn' value='Sign In' onClick={e => this.onSubmit(e)}/>
+		 </form>
          <span id='login-span'>Want to be part of us. Then <Link to='/register' >Register</Link> here.</span>
             </div>
         </div>

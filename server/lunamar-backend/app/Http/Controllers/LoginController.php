@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-
-class UserController extends Controller
+class LoginController extends Controller
 {
+
+    /**
+     * function to check the logic of login
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function login(Request $request){
+        print_r($request->json());
+        die('in here Login controller --> login function');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,6 +27,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,6 +37,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,43 +46,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'first_name' => 'required',
-            'last_name'  => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'date_of_birth' => 'required',
-            'gender' => 'required',
-            'password' => 'required'
-        ]);
-        $user = User::create($request->all());
-        return response()->json(['message'=> 'user created',
-            'user' => $user]);
+        //
     }
-    /**
-     *Login logic
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function login(Request $request){
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $results =  DB::select('SELECT * FROM users where email= :email AND password = :password',
-            ['email' => $email, 'password' => $password]);
-        if(!$results){
-            return  response()->json(['message' => 'false'], 204);
-        }
-        $user = json_decode(json_encode($results), True);
-        return response()->json([
-            'message' => 'success',
-            'user' => $user[0]
-            ]);
-    }
+
     /**
      * Display the specified resource.
      *
@@ -82,6 +59,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -92,6 +70,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -103,6 +82,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -112,10 +92,5 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    function userList()
-    {
-        return User::all();
     }
 }

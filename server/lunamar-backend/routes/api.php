@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\ApartmentController;
@@ -37,6 +38,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+/**
+ * Register User
+ */
+Route::post('/register', [UserController::class, 'store']);
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/contactus', [\App\Http\Controllers\ContactUsController::class, 'store']);
 Route::post('/buildingList',[BuildingController::class,'buildingList']);
 Route::post('/saveBuilding',[BuildingController::class,'saveBuilding']);
 Route::post('/deleteBuilding/{id}',[BuildingController::class,'deleteBuilding']);
@@ -97,8 +104,3 @@ Route::post('/visitorList',[VisitorController::class,'visitorList']);
 Route::post('/saveVisitor',[VisitorController::class,'saveVisitor']);
 Route::post('/deleteVisitor/{id}',[VisitorController::class,'deleteVisitor']);
 
-
-
-Route::post('/register', [UserController::class, 'store']);
-Route::post('/login', [UserController::class, 'login']);
-Route::post('/contactus', [\App\Http\Controllers\ContactUsController::class, 'store']);
