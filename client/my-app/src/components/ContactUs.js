@@ -12,8 +12,15 @@ import emailjs from 'emailjs-com';
 
 class ContactUs extends React.Component {
 
+<<<<<<< HEAD
     API_PATH = SERVER_URL+'/contactus';
 
+=======
+    FETCH_API = 'http://localhost:8000/api/contactusList/';
+    INSERT_API = 'http://localhost:8000/api/saveContactus/';
+    DELETE_API = 'http://localhost:8000/api/deleteContactus/';
+    
+>>>>>>> 10199cd80f2c867784c67e62075043ca06902593
     constructor(props){
         super(props);
         init(EMAIL_USER_ID);

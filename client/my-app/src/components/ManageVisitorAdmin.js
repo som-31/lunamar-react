@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import axios from 'axios';
 
 class ManageVisitorAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertVisitor.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchVisitor.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteVisitor.php';
+
+  FETCH_API = 'http://localhost:8000/api/visitorList/';
+  INSERT_API = 'http://localhost:8000/api/saveVisitor/';
+  DELETE_API = 'http://localhost:8000/api/deleteVisitor/';
 
   constructor(props) {
     super(props);
@@ -175,7 +175,7 @@ class ManageVisitorAdmin extends React.Component {
       <>
        <div class="sidebar">
    <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
+   <Link to="/manage-manager-admin">Manage Manager</Link>
 
             <Link to="/manage-building-admin">Manage Building</Link>
             <Link to='/manage-resident-admin'>Manage Resident</Link>

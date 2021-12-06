@@ -4,36 +4,40 @@ import axios from 'axios';
 
 class ManageApartmentAdmin extends React.Component {
 
-  API_PATH = 'http://localhost/projects/lunamar-react/server/manageapartmentadmin.php'
-
+  FETCH_API = 'http://localhost:8000/api/apartmentList/';
+  INSERT_API = 'http://localhost:8000/api/saveApartment/';
+  DELETE_API = 'http://localhost:8000/api/deleteApartment/';
+  
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      subdivision_name: '',
       floors: '',
-      total_apartments: '',
-      occupancy: '',
-      dataSent: ''
+      services: '',
+      owner_name: '',
+      dataSent: '',
+      buildingRecords: {}
+
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
+  componentDidMount(){
 
-  onSubmit(event) {
-    event.preventDefault();
-    console.log('in Submit function');
-    console.log(this.state);
+    /**
+     * Request to get the data from Backend
+     */
     axios({
       method: 'post',
-      url: this.API_PATH,
+      url: this.FETCH_API,
       headers: {
         'content-type': 'application/json'
       },
       data: this.state
     })
       .then(result => {
-        console.log(result.data)
+        console.log(result);
         this.setState({
-          dataSent: result.data.sent,
+          buildingRecords: result.data,
         })
         console.log(this.state)
       })
@@ -41,24 +45,126 @@ class ManageApartmentAdmin extends React.Component {
         error: error.message
       }));
   }
+
+  onSubmit(event) {
+    event.preventDefault();
+    axios({
+      method: 'post',
+      url: this.INSERT_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state);
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+  /**
+   * Method to handle delete Logic
+   * @param {*} id 
+   */
+  handleDelete(id){
+    console.log(id);
+    console.log('in here delete function');
+    /**
+     * Request to delete the data from Backend
+     */
+         axios({
+          method: 'post',
+          url: this.DELETE_API,
+          headers: {
+            'content-type': 'application/json'
+          },
+          data: { id }
+        })
+          .then(result => {
+            console.log(result);
+          })
+          .catch(error => {
+                  this.setState({
+                  error: error.message
+                })
+                console.log(error);
+           });
+  }
+
+  /**
+   * Method to handle update logic
+   * @param {*} id 
+   */
+  handleUpdate(e, id){
+    console.log('in here update function');
+    console.log(id);
+
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: this.INSERT_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state);
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+
+  renderTableData() {
+    let buildings = [];
+    for (let index = 0; index < this.state.buildingRecords.length; index++) {
+      buildings[index] = this.state.buildingRecords[index];
+    }
+    return buildings.map((building, index) => {
+       const { id, subdivision_name, floors, services, owner_name} = building //destructuring
+       return (
+          <tr key={id}>
+             <td>{subdivision_name}</td>
+             <td>{floors}</td>
+             <td>{services}</td>
+             <td>{owner_name}</td>
+             <td>
+                <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
+                <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
+              </td>
+          </tr>
+       )
+    })
+ }
   render() {
     return (
 
       <>
   
-      <div class="sidebar">
-       <Link to="/manage-reports-admin">Manage Reports</Link>
-            <Link to="/manage-manager">Manage Manager</Link>
-    
-                <Link to="/manage-building-admin">Manage Building</Link>
-                <Link to='/manage-resident-admin'>Manage Resident</Link>
-                <Link to='/manage-apartment-admin'>Manage Apartment</Link>
-                <Link to='/manage-service-admin'>Manage Service</Link>
-                <Link to='/manage-visitor-admin'>Manage Visitor</Link>
-                <Link to='/manage-amenities-admin'>Manage Amenities</Link>
-                <Link to='/chat-admin'>Chat</Link>
-        </div>
-    
+  <div class="sidebar">
+         <Link to="/manage-reports-admin">Manage Reports</Link>
+         <Link to="/manage-manager-admin">Manage Manager</Link>
+      
+                  <Link to="/manage-building-admin">Manage Building</Link>
+                  <Link to='/manage-resident-admin'>Manage Resident</Link>
+                  <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+                  <Link to='/manage-service-admin'>Manage Service</Link>
+                  <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+                  <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+                  <Link to='/chat-admin'>Chat</Link>
+          </div>
         <div id='login-form'class='login-page'>
           <div class="form-box">
               <div class='button-box'>
@@ -110,51 +216,21 @@ class ManageApartmentAdmin extends React.Component {
         </form>
           </div>
       </div>
-        <center>
-    <table>
-        <tr>
-          <th>Building Name</th>
-          <th>Owner</th>
-          <th>Services</th>
-          <th>Floor</th>
-          <th>Apartment</th>
-          <th>Actions</th>
-        </tr>
-        <tr>
-          <td>Lunamar</td>
-          <td>Sayali Deshmukh</td>
-          <td>Electricity, Light, Water</td>
-          <td>6</td>
-          <td>101</td>
-          <td>
-            <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-          <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-        </td>
-        </tr>
-        <tr>
-            <td>Lunamar</td>
-            <td>Rohit Padwal</td>
-            <td>Electricity, Light, Water</td>
-            <td>4</td>
-            <td>402</td>
-            <td>
-              <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-            <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-          </td>
-        </tr>
-        <tr>
-            <td>Lunamar</td>
-            <td>Somnath Jadhav</td>
-            <td>Electricity, Light, Water</td>
-            <td>8</td>
-            <td>805</td>
-            <td>
-              <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-            <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-          </td>
-        </tr>
-      </table>
-    </center>
+       <br/>
+       <center>
+          <table>
+            <tr>
+              <th>Subdivision</th>
+              <th>Floors</th>
+              <th>Services</th>
+              <th>Owner Name</th>
+              <th>Actions</th>
+            </tr>
+            {
+              this.renderTableData()
+            }
+          </table>
+        </center>
             
     
           </>

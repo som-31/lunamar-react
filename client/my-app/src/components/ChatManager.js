@@ -25,7 +25,7 @@ function ChatManager(){
             <Link to='/chat-manager'>Chat</Link>
         </div>    <div>
         <h1 style={{textAlign:"center"}}>
-            Welcome, Visitor
+            Welcome 
         </h1>
 
         <button class="open-button" onClick={openForm}>Chat</button>

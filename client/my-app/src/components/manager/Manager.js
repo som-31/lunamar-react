@@ -21,7 +21,7 @@ class Manager extends React.Component {
                 </div>
                 <div>
                     <h1 style={{"text-align":"center"}}>
-                        Welcome
+                        Welcome Sayali
                     </h1>
                 </div>
             </>

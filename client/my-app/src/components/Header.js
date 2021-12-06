@@ -23,7 +23,11 @@ function Header(){
                 <li><Link to='/services-information'>Services</Link></li>
                 <li><Link to='contactus'>Contact Us</Link></li>
                 <li><Link to='/login'>Login</Link></li>
+<<<<<<< HEAD
                 {/*<li><Link to='/employee'>Employee</Link></li>*/}
+=======
+                {/* <li><Link to='/employee'>Employee</Link></li> */}
+>>>>>>> 10199cd80f2c867784c67e62075043ca06902593
                 <li><Link to={{ pathname: "http://sxd6629.uta.cloud/" }} target="_blank">Blog</Link></li>
 
 

@@ -18,7 +18,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +27,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -50,7 +48,6 @@ class UserController extends Controller
         return response()->json(['message'=> 'user created',
             'user' => $user]);
     }
-
     /**
      *Login logic
      *
@@ -75,7 +72,6 @@ class UserController extends Controller
             'user' => $user[0]
             ]);
     }
-
     /**
      * Display the specified resource.
      *
@@ -86,7 +82,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -97,7 +92,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -109,7 +103,6 @@ class UserController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -119,5 +112,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    function userList()
+    {
+        return User::all();
     }
 }

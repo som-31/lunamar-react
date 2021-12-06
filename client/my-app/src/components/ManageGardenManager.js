@@ -4,7 +4,9 @@ import axios from 'axios';
 
 class ManageGardenManager extends React.Component {
 
-  API_PATH = 'http://localhost/projects/lunamar-react/server/managegardenmanager.php'
+  FETCH_API = 'http://localhost:8000/api/gardenList/';
+  INSERT_API = 'http://localhost:8000/api/saveGarden/';
+  DELETE_API = 'http://localhost:8000/api/deleteGarden/';
 
   constructor(props) {
     super(props);
@@ -46,14 +48,17 @@ class ManageGardenManager extends React.Component {
 
       <>
   
-  <div class="sidebar">
-            <Link to="/manage-building-manager">Manage Building</Link>
-            <Link to='/manage-resident-manager'>Manage Resident</Link>
-            <Link to='/manage-apartment-manager'>Manage Apartment</Link>
-            <Link to='/manage-service-manager'>Manage Service</Link>
-            <Link to='/manage-visitor-manager'>Manage Visitor</Link>
-            <Link to='/manage-amenities-manager'>Manage Amenities</Link>
-            <Link to='/chat-manager'>Chat</Link>
+ <div class="sidebar">
+       <Link to="/manage-reports-admin">Manage Reports</Link>
+       <Link to="/manage-manager-admin">Manage Manager</Link>
+    
+                <Link to="/manage-building-admin">Manage Building</Link>
+                <Link to='/manage-resident-admin'>Manage Resident</Link>
+                <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+                <Link to='/manage-service-admin'>Manage Service</Link>
+                <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+                <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+                <Link to='/chat-admin'>Chat</Link>
         </div>
 
     <div id='login-form'class='login-page'>

@@ -4,9 +4,9 @@ import axios from 'axios';
 
 class ManageBuildingAdmin extends React.Component {
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertbuilding.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchBuilding.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteBuilding.php';
+  INSERT_API = 'http://localhost:8000/api/saveBuilding/';
+  FETCH_API = 'http://localhost:8000/api/buildingList/';
+  DELETE_API = 'http://localhost:8000/api/deleteBuilding/';
 
   constructor(props) {
     super(props);
@@ -48,6 +48,7 @@ class ManageBuildingAdmin extends React.Component {
   }
 
   onSubmit(event) {
+    console.log("inside submit")
     event.preventDefault();
     axios({
       method: 'post',
@@ -81,7 +82,7 @@ class ManageBuildingAdmin extends React.Component {
      */
          axios({
           method: 'post',
-          url: this.DELETE_API,
+          url: this.DELETE_API+id,
           headers: {
             'content-type': 'application/json'
           },
@@ -129,6 +130,8 @@ class ManageBuildingAdmin extends React.Component {
 
 
   renderTableData() {
+    console.log("inside table");
+
     let buildings = [];
     for (let index = 0; index < this.state.buildingRecords.length; index++) {
       buildings[index] = this.state.buildingRecords[index];
@@ -158,18 +161,18 @@ class ManageBuildingAdmin extends React.Component {
     return (
 
       <>
-       <div class="sidebar">
-   <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
-
-            <Link to="/manage-building-admin">Manage Building</Link>
-            <Link to='/manage-resident-admin'>Manage Resident</Link>
-            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
-            <Link to='/manage-service-admin'>Manage Service</Link>
-            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
-            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
-            <Link to='/chat-admin'>Chat</Link>
-    </div>
+  <div class="sidebar">
+         <Link to="/manage-reports-admin">Manage Reports</Link>
+         <Link to="/manage-manager-admin">Manage Manager</Link>
+      
+                  <Link to="/manage-building-admin">Manage Building</Link>
+                  <Link to='/manage-resident-admin'>Manage Resident</Link>
+                  <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+                  <Link to='/manage-service-admin'>Manage Service</Link>
+                  <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+                  <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+                  <Link to='/chat-admin'>Chat</Link>
+          </div>
 
         <div id='login-form' class='login-page'>
           <div class="form-box">

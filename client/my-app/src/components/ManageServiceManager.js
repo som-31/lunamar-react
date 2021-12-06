@@ -8,15 +8,16 @@ import axios from 'axios';
 class ManageServiceManager extends React.Component {
 
 
-  INSERT_API = 'http://localhost/projects/lunamar-react/server/insertService.php';
-  FETCH_API = 'http://localhost/projects/lunamar-react/server/fetchService.php';
-  DELETE_API = 'http://localhost/projects/lunamar-react/server/deleteService.php';
+  INSERT_API = 'http://localhost:8000/api/saveServices/';
+  FETCH_API = 'http://localhost:8000/api/servicesList/';
+  DELETE_API = 'http://localhost:8000/api/deleteServices/';
 
   constructor(props) {
     super(props);
     this.state = {
       name: '',
       description: '',
+      dataSent: '',
 
       serviceRecords: {}
     };
@@ -85,7 +86,7 @@ class ManageServiceManager extends React.Component {
      */
     axios({
       method: 'post',
-      url: this.DELETE_API,
+      url: this.DELETE_API+id,
       headers: {
         'content-type': 'application/json'
       },
@@ -163,13 +164,16 @@ class ManageServiceManager extends React.Component {
 
       <>
         <div class="sidebar">
-          <Link to="/manage-building-manager">Manage Building</Link>
-          <Link to='/manage-resident-manager'>Manage Resident</Link>
-          <Link to='/manage-apartment-manager'>Manage Apartment</Link>
-          <Link to='/manage-service-manager'>Manage Service</Link>
-          <Link to='/manage-visitor-manager'>Manage Visitor</Link>
-          <Link to='/manage-amenities-manager'>Manage Amenities</Link>
-          <Link to='/chat-manager'>Chat</Link>
+       <Link to="/manage-reports-admin">Manage Reports</Link>
+       <Link to="/manage-manager-admin">Manage Manager</Link>
+    
+                <Link to="/manage-building-admin">Manage Building</Link>
+                <Link to='/manage-resident-admin'>Manage Resident</Link>
+                <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+                <Link to='/manage-service-admin'>Manage Service</Link>
+                <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+                <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+                <Link to='/chat-admin'>Chat</Link>
         </div>
 
         <div id='login-form' class='login-page'>

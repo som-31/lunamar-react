@@ -157,7 +157,8 @@ class Register extends React.Component {
         }
      }
 
-    render(){
+render(){
+
         
         return(
             <>
@@ -167,7 +168,7 @@ class Register extends React.Component {
                 <div className='button-box'>
                      <div id='btn'></div>
                 </div>
-         <div className="login-registering">
+         <div class="login-registering">
             <center>
                 <h1>Register</h1>
             </center>

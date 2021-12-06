@@ -1,23 +1,180 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-function ManagePoolAdmin(){
+
+class ManagePoolAdmin extends React.Component {
+
+  FETCH_API = 'http://localhost:8000/api/poolList/';
+  INSERT_API = 'http://localhost:8000/api/savePool/';
+  DELETE_API = 'http://localhost:8000/api/deletePool/';
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      PoolId: '',
+      SubdivisionName: '',
+      OpeningHour: '',
+      ClosingingHour: '',
+      LastInspectionAt: '',
+      NextInspectionAt: '',
+      Actions: '',
+      poolRecords: {}
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.renderTableData = this.renderTableData.bind(this);
+  }
+
+  componentDidMount(){
+
+    /**
+     * Request to get the data from Backend
+     */
+    axios({
+      method: 'post',
+      url: this.FETCH_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          plantRecords: result.data,
+        })
+        console.log(this.state)
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+  onSubmit(event) {
+    event.preventDefault();
+    axios({
+      method: 'post',
+      url: this.INSERT_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state);
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+  /**
+   * Method to handle delete Logic
+   * @param {*} id 
+   */
+
+  handleDelete(id){
+    console.log(id);
+    console.log('in here delete function');
+    /**
+     * Request to delete the data from Backend
+     */
+         axios({
+          method: 'post',
+          url: this.DELETE_API,
+          headers: {
+            'content-type': 'application/json'
+          },
+          data: { id }
+        })
+          .then(result => {
+            console.log(result);
+          })
+          .catch(error => {
+                  this.setState({
+                  error: error.message
+                })
+                console.log(error);
+           });
+  }
+
+  /**
+   * Method to handle update logic
+   * @param {*} id 
+   */
+  handleUpdate(e, id){
+    console.log('in here update function');
+    console.log(id);
+
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: this.INSERT_API,
+      headers: {
+        'content-type': 'application/json'
+      },
+      data: this.state
+    })
+      .then(result => {
+        console.log(result);
+        this.setState({
+          dataSent: result.data.sent,
+        })
+        console.log(this.state);
+      })
+      .catch(error => this.setState({
+        error: error.message
+      }));
+  }
+
+
+  renderTableData() {
+    let plants = [];
+    for (let index = 0; index < this.state.plantRecords.length; index++) {
+      plants[index] = this.state.plantRecords[index];
+    }
+    return plants.map((plant, index) => {
+       const {id, SubdivisionName, OpeningHour, ClosingingHour, LastInspectionAt, NextInspectionAt} = plant //destructuring
+       return (
+          <tr key={id}>
+             <td>{SubdivisionName}</td>
+             <td>{OpeningHour}</td>
+             <td>{ClosingingHour}</td>
+             <td>{LastInspectionAt}</td>
+             <td>{NextInspectionAt}</td>
+             <td>{SubdivisionName}</td>
+             <td>
+                <button onClick={this.handleUpdate.bind(this, id)}><img src="assets/icons/pencil.png"alt='Update'  width="20" height="20" /></button>
+                <button onClick={this.handleDelete.bind(this, id)}><img src="assets/icons/trash.png" alt='Trash' width="20" height="20" /></button>
+              </td>
+          </tr>
+       )
+    })
+ }
+
+
+render(){
 
     return(
         <>
   
   <div class="sidebar">
-   <Link to="/manage-reports-admin">Manage Reports</Link>
-        <Link to="/manage-manager">Manage Manager</Link>
-
-            <Link to="/manage-building-admin">Manage Building</Link>
-            <Link to='/manage-resident-admin'>Manage Resident</Link>
-            <Link to='/manage-apartment-admin'>Manage Apartment</Link>
-            <Link to='/manage-service-admin'>Manage Service</Link>
-            <Link to='/manage-visitor-admin'>Manage Visitor</Link>
-            <Link to='/manage-amenities-admin'>Manage Amenities</Link>
-            <Link to='/chat-admin'>Chat</Link>
-    </div>
+         <Link to="/manage-reports-admin">Manage Reports</Link>
+         <Link to="/manage-manager-admin">Manage Manager</Link>
+      
+                  <Link to="/manage-building-admin">Manage Building</Link>
+                  <Link to='/manage-resident-admin'>Manage Resident</Link>
+                  <Link to='/manage-apartment-admin'>Manage Apartment</Link>
+                  <Link to='/manage-service-admin'>Manage Service</Link>
+                  <Link to='/manage-visitor-admin'>Manage Visitor</Link>
+                  <Link to='/manage-amenities-admin'>Manage Amenities</Link>
+                  <Link to='/chat-admin'>Chat</Link>
+          </div>
     <div id='login-form'class='login-page'>
       <div class="form-box">
           <div class='button-box'>
@@ -56,99 +213,15 @@ function ManagePoolAdmin(){
     <label for="Next_Ispection">Next Inspection At</label>
     <input type="date" class='input-field' required name="" id="Next Inspection At"/>
     <br/>
-     <button type='submit'class='submit-btn'>Submit</button>
-     </form>
-      </div>
-  </div>
-    <center>
-<table>
-    <tr>
-      <th>Pool Id</th>
-      <th>Subdivision Name</th>
-      <th>Opening Hours</th>
-      <th>Closing Hours</th>
-      <th>Last Inspection At </th>
-      <th>Next Inspection At</th>
-       <th>Actions</th>
-    </tr>
-    <tr>
-        <td>01</td>
-      <td>Lunamar</td>
-      <td>5:00 AM</td>
-      <td>11:00 PM</td>
-     <td>01/10/2021</td>
-     <td>10/10/2021</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td> 02</td>
-        <td>Lunamar</td>
-        <td>9:00 AM</td>
-        <td>12:00 PM</td>
-       <td>02/10/2021</td>
-       <td>12/10/2021</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td> 03</td>
-        <td>Lunamar</td>
-        <td>6:00 AM</td>
-        <td>9:00 AM</td>
-       <td>03/10/2021</td>
-       <td>13/10/2021</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td> 04</td>
-        <td>Lunamar</td>
-        <td>5:30 AM</td>
-        <td>1:00 PM</td>
-       <td>04/10/2021</td>
-       <td>14/10/2021</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td> 05</td>
-        <td>Lunamar</td>
-        <td>4:00 AM</td>
-        <td>11:00 AM</td>
-       <td>05/10/2021</td>
-       <td>15/10/2021</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-       <td> 06</td>
-        <td>Lunamar</td>
-        <td>6:00 AM</td>
-        <td>11:00 PM</td>
-       <td>06/10/2021</td>
-       <td>16/10/2021</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-  </table>
-</center>
-        
-
+    <button type='submit'class='submit-btn'>Submit</button>
+    </form>
+    </div>
+    </div>
+    
       </>
     );
 }
+}
+
 
 export default ManagePoolAdmin;

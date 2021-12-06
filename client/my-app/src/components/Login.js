@@ -3,7 +3,6 @@ import { BrowserRouter, Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import {SERVER_URL} from "../lib/constants";
 
-
 class Login extends React.Component {
 
     API_PATH = SERVER_URL+'/login';
@@ -48,17 +47,14 @@ class Login extends React.Component {
                 errors["email"] = "Email is not valid";
             }
         }
-
         //Password
         if(!this.state.password){
             formIsValid = false;
             errors['password'] = 'Cannot be empty';
         }
-
         this.setState({ errors: errors });
         return formIsValid;
     }
-
     onSubmit(event){
         event.preventDefault();
         if(this.handleFormValidations()){
@@ -108,7 +104,6 @@ class Login extends React.Component {
                         console.log('User not found');
                     }
                     console.log(result);
-
                 })
                 .catch(error => this.setState({
                     error: error.message
@@ -117,8 +112,6 @@ class Login extends React.Component {
             console.log('Form has errors', this.state.errors);
         }
      }
-
-
     render(){
         return(
         <>
@@ -156,8 +149,5 @@ class Login extends React.Component {
         </>
         );
     }
-
 }
-
-
 export default withRouter(Login);
