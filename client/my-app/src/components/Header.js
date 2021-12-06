@@ -23,7 +23,7 @@ function Header(){
                 <li><Link to='/services-information'>Services</Link></li>
                 <li><Link to='contactus'>Contact Us</Link></li>
                 <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/employee'>Employee</Link></li>
+                {/* <li><Link to='/employee'>Employee</Link></li> */}
                 <li><Link to={{ pathname: "http://sxd6629.uta.cloud/" }} target="_blank">Blog</Link></li>
 
 

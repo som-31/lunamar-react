@@ -17,7 +17,7 @@ function Manager(){
         </div>
     <div>
         <h1 style={{"text-align":"center"}}>
-            Welcome
+            Welcome Sayali
         </h1>
     </div>
         

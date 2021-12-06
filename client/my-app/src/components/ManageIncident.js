@@ -76,7 +76,7 @@ class ManageIncident extends React.Component {
     <input type='text'class='input-field'placeholder='Visiting Apartment Id' required/>
     <br/>
     <br/>
-    <label for="">Select Visitor</label>
+    {/* <label for="">Select Visitor</label>
     <select name="" id="">
         <option value="">Sayali Deshmukh</option>
         <option value="">Somnath Jadhav</option>
@@ -84,7 +84,7 @@ class ManageIncident extends React.Component {
         <option value="">Michael Kors</option>
         <option value="">Ernst Handel</option>
         <option value="">Island Trading</option>
-    </select>
+    </select> */}
     <br/>
     <br/>
  
@@ -97,7 +97,9 @@ class ManageIncident extends React.Component {
      </form>
       </div>
   </div>
-    
+    <br/>
+    <br/>
+    <br/>
   <center>
     <table>
         <tr>
@@ -134,54 +136,8 @@ class ManageIncident extends React.Component {
       <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
     </td>
     </tr>
-    <tr>
-        <td>murder</td>
-        <td>Rohit Padwal</td>
-      
-        <td>13</td>
-        <td>5:20 PM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td>Roberry</td>
-        <td>Michael Kors</td>
-        
-        <td>20</td>
-        <td>6:00 AM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-      <td>Roberry</td>
-      <td>Ernst Handel</td>
-      
-      <td>34</td>
-      <td>6:30 PM</td>
-      <td>fsdfsdfdsfffcfsfff</td>
-      <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
-    <tr>
-        <td>Roberry</td>
-        <td>Island Trading</td>
-      
-        <td>3</td>
-        <td>10:00 PM</td>
-        <td>fsdfsdfdsfffcfsfff</td>
-    <td>
-        <button><img src="assets/icons/pencil.png" alt="edit image" width="20" height="20"/></button>
-      <button><img src="assets/icons/trash.png" alt="Delete image" width="20" height="20"/></button>
-    </td>
-    </tr>
+   
+  
   </table>
 </center>
         

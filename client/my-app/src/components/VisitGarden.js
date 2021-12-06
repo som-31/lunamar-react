@@ -187,7 +187,7 @@ class VisitGarden extends React.Component {
                                 type="text" className="field" id="garden_name" placeholder="Garden Name" required
                                 value={this.state.garden_name}
                                 onChange={e => this.setState({ garden_name: e.target.value })} />
-                                <input type="number" className="field" id="opening_hours" placeholder="Opening hours" required
+                                <input type="number" className="field" id="opening_hours" placeholder="Opening hours HH:MM:SS" required
                                 value={this.state.opening_hours}
                                 onChange={e => this.setState({ opening_hours: e.target.value })}
                                 />
